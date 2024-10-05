@@ -3,6 +3,7 @@ using UnityEngine;
 public class Guide_Main : MonoBehaviour
 {
     public GameObject[] pages;
+    [HideInInspector] public bool Can_Change = true;
     public int CurrentIndex = 0;
 
     void Start()
@@ -20,9 +21,9 @@ public class Guide_Main : MonoBehaviour
 
     private void LoadPage(int index)
     {
-        if (index < 0 || index >= pages.Length)
+        if (!Can_Change || index < 0 || index >= pages.Length)
         {
-            Debug.LogWarning("Invalid page index: " + index);
+            Debug.LogWarning("Cannot change page or invalid page index: " + index);
             return;
         }
 
@@ -42,21 +43,25 @@ public class Guide_Main : MonoBehaviour
 
     public void LoadNext()
     {
-        int nextIndex = CurrentIndex + 1;
-
-        if (nextIndex < pages.Length)
+        if (Can_Change)
         {
-            LoadPage(nextIndex);
+            int nextIndex = CurrentIndex + 1;
+            if (nextIndex < pages.Length)
+            {
+                LoadPage(nextIndex);
+            }
         }
     }
 
     public void LoadPrevious()
     {
-        int previousIndex = CurrentIndex - 1;
-
-        if (previousIndex >= 0)
+        if (Can_Change)
         {
-            LoadPage(previousIndex);
+            int previousIndex = CurrentIndex - 1;
+            if (previousIndex >= 0)
+            {
+                LoadPage(previousIndex);
+            }
         }
     }
 }
