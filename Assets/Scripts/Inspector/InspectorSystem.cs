@@ -16,6 +16,7 @@ public class InspectorSystem : MonoBehaviour
     public float displayDuration = 2f;  // Duration to display "No Connect", "PositiveImage", or "NegativeImage"
 
     private bool isInCheckMode = false;
+    private bool canCheck;
     private InspectComponent currentInspectComponent;
 
     void Start()
@@ -29,7 +30,7 @@ public class InspectorSystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canCheck == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Collider2D clickedCollider = Physics2D.OverlapPoint(mousePosition);
@@ -67,6 +68,7 @@ public class InspectorSystem : MonoBehaviour
 
         if (clickedObject.CompareTag("PaperComponent") || clickedObject.CompareTag("GuidePage"))
         {
+            canCheck = false;
             if (clickedObject == currentInspectComponent.Target_Page)
             {
                 if (currentInspectComponent.positiveResponse)
@@ -90,5 +92,6 @@ public class InspectorSystem : MonoBehaviour
         obj.SetActive(true);
         yield return new WaitForSeconds(displayDuration);
         obj.SetActive(false);
+        canCheck = true;
     }
 }

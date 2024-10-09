@@ -23,7 +23,8 @@ public class PaperManager : MonoBehaviour
     private bool canNext = false;
     private bool waitingForContinue = false;  // Flag to check if we're waiting for player to continue
 
-    private TimerClock timerClock;  // Reference to the TimerClock script
+    [Header("Clock")]
+    public TimerClock timerClock;  // Reference to the TimerClock script
     [HideInInspector] public bool timerExpired = false;  // Flag for the timer expiration
 
     private void Awake()
@@ -66,7 +67,7 @@ public class PaperManager : MonoBehaviour
 
     private void StartTimer()
     {
-       
+        timerClock.StartClock();
     }
 
     public void NextPaper(bool hoax)
