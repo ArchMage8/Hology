@@ -3,7 +3,7 @@ using UnityEngine;
 public class Guide_Main : MonoBehaviour
 {
     public GameObject[] pages;
-    [HideInInspector] public bool Can_Change = true;
+    public bool Can_Change = true;
     public int CurrentIndex = 0;
 
     void Start()
@@ -45,6 +45,7 @@ public class Guide_Main : MonoBehaviour
     {
         if (Can_Change)
         {
+            Debug.Log("Test Forward");
             int nextIndex = CurrentIndex + 1;
             if (nextIndex < pages.Length)
             {
@@ -57,6 +58,7 @@ public class Guide_Main : MonoBehaviour
     {
         if (Can_Change)
         {
+            Debug.Log("Test Back");
             int previousIndex = CurrentIndex - 1;
             if (previousIndex >= 0)
             {

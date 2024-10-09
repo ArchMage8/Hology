@@ -6,8 +6,10 @@ public class Guide_Previous : MonoBehaviour
 
     void OnMouseDown()
     {
+       
         if (guideMain != null)
         {
+            
             guideMain.LoadPrevious();
         }
     }

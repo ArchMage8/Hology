@@ -60,7 +60,7 @@ public class Guide_Drag : MonoBehaviour
         {
             if (button != null)
             {
-                button.SetActive(false);
+                button.GetComponent<Collider2D>().enabled = false;
             }
         }
     }
@@ -81,7 +81,8 @@ public class Guide_Drag : MonoBehaviour
         {
             if (button != null)
             {
-                button.SetActive(true);
+                button.GetComponent<Collider2D>().enabled = true;
+
             }
         }
     }

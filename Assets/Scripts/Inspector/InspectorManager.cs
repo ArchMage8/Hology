@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class InspectorManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class InspectorManager : MonoBehaviour
     [Space(20)]
 
     public GameObject InspectHandler;
+    public float AnimationWait = 1.5f;
 
     [HideInInspector] public bool isEnabled = false;
 
@@ -32,7 +34,7 @@ public class InspectorManager : MonoBehaviour
     public void DisableInspect()
     {
         BackGroundSystem_Disable();
-        InspectHandler.SetActive(true);
+        StartCoroutine(DisableAnimations());
     }
 
     private void BackgroundSystem_Toggle()
@@ -45,7 +47,7 @@ public class InspectorManager : MonoBehaviour
         {
             if (button != null)
             {
-                button.SetActive(!isEnabled);
+                button.SetActive(false);
             }
         }
 
@@ -113,6 +115,14 @@ public class InspectorManager : MonoBehaviour
         {
             guideMainCollider.enabled = true;
         }
+    }
+
+    private IEnumerator DisableAnimations()
+    { 
+        Animator InspectAnimator = InspectEffect.GetComponent<Animator>();
+        InspectAnimator.SetTrigger("Close");
+        yield return new WaitForSeconds(AnimationWait);
+        InspectHandler.SetActive(false);
     }
 }
 

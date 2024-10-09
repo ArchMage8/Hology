@@ -1,10 +1,29 @@
 using UnityEngine;
+using System.Collections;
 
 public class PaperButtonHoax : MonoBehaviour
 {
+    public float AnimationDelay;
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void OnMouseDown()
     {
-        // Call NextPaper from PaperManager and pass true (indicating it's a hoax)
+        if (PaperManager.Instance.canNext)
+        {
+            StartCoroutine(AnimationWait());
+        }
+    }
+
+    private IEnumerator AnimationWait()
+    {
+        animator.SetTrigger("Press");
+        yield return new WaitForSeconds(AnimationDelay);
         PaperManager.Instance.NextPaper(true);
     }
 }
+

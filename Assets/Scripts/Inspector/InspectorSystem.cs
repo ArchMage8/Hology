@@ -15,6 +15,11 @@ public class InspectorSystem : MonoBehaviour
     [Header("Settings")]
     public float displayDuration = 2f;  // Duration to display "No Connect", "PositiveImage", or "NegativeImage"
 
+    [Header("Research System")]
+    public GameObject GuideResearchPage;
+    public GameObject ResearchIcon;
+    public GameObject ResearchButton;
+
     private bool isInCheckMode = false;
     private bool canCheck;
     private InspectComponent currentInspectComponent;
@@ -26,6 +31,8 @@ public class InspectorSystem : MonoBehaviour
         noConnect.SetActive(false);
         positiveImage.SetActive(false);
         negativeImage.SetActive(false);
+        ResearchIcon.SetActive(false);
+        ResearchButton.SetActive(false);
     }
 
     void Update()
@@ -69,7 +76,15 @@ public class InspectorSystem : MonoBehaviour
         if (clickedObject.CompareTag("PaperComponent") || clickedObject.CompareTag("GuidePage"))
         {
             canCheck = false;
-            if (clickedObject == currentInspectComponent.Target_Page)
+            if(clickedObject == GuideResearchPage && currentInspectComponent.Target_Page == GuideResearchPage)
+            {
+                //Research Excepetion
+                StartCoroutine(DisplayTemporary(ResearchIcon));
+                ResearchButton.SetActive(true);
+            }
+            
+            
+            else if (clickedObject == currentInspectComponent.Target_Page)
             {
                 if (currentInspectComponent.positiveResponse)
                 {

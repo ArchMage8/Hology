@@ -8,6 +8,7 @@ public class Guide_Next : MonoBehaviour
     {
         if (guideMain != null)
         {
+           
             guideMain.LoadNext();
         }
     }

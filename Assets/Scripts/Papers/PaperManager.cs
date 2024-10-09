@@ -20,7 +20,7 @@ public class PaperManager : MonoBehaviour
     private int completedPapers = 0;
     private int incorrectPapers = 0;
 
-    private bool canNext = false;
+    public bool canNext = false;
     private bool waitingForContinue = false;  // Flag to check if we're waiting for player to continue
 
     [Header("Clock")]
@@ -157,5 +157,14 @@ public class PaperManager : MonoBehaviour
     {
         Debug.Log("Time's up! Player didn't complete all papers.");
       
+    }
+
+    public GameObject GetActivePaper()
+    {
+        if (currentPaperIndex < papers.Length && papers[currentPaperIndex].activeSelf)
+        {
+            return papers[currentPaperIndex];  // Return the active paper
+        }
+        return null;  // If no paper is active, return null
     }
 }
