@@ -5,6 +5,7 @@ using UnityEngine;
 public class InspectToggle : MonoBehaviour
 {
     public InspectorManager inspectorManager;  // Reference to the InspectorSystem script
+    public Animator animator;
 
     private void OnMouseDown()
     {
@@ -13,10 +14,12 @@ public class InspectToggle : MonoBehaviour
             if (inspectorManager.isEnabled)
             {
                 inspectorManager.DisableInspect();
+                animator.SetTrigger("Close");
             }
             else
             {
                 inspectorManager.ToggleInspect();
+                animator.SetTrigger("Open");
             }
         }
     }
