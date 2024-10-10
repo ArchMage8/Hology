@@ -2,10 +2,18 @@ using UnityEngine;
 
 public class Guide_Drag : MonoBehaviour
 {
+    [Header("Bookmarks and Navigation Buttons")]
     public GameObject[] bookmarks;  // Array of GameObjects with BoxColliders (bookmarks)
     public GameObject[] navigationButtons;  // Array of GameObjects (navigation buttons)
+
+    [Header("Target Object")]
     public GameObject target;  // Main GameObject with BoxCollider (Target)
-    public Collider2D draggableArea;  // Collider representing the draggable area
+
+    [Header("Draggable Area Boundaries")]
+    public float minX;  // Minimum X coordinate of the draggable area
+    public float maxX;  // Maximum X coordinate of the draggable area
+    public float minY;  // Minimum Y coordinate of the draggable area
+    public float maxY;  // Maximum Y coordinate of the draggable area
 
     private bool isDragging = false;
     private Vector3 offset;
@@ -82,23 +90,17 @@ public class Guide_Drag : MonoBehaviour
             if (button != null)
             {
                 button.GetComponent<Collider2D>().enabled = true;
-
             }
         }
     }
 
     Vector3 ClampToDraggableArea(Vector3 targetPosition)
     {
-        if (draggableArea != null)
-        {
-            Bounds bounds = draggableArea.bounds;
+        // Clamp the target position within the defined min and max X, Y range
+        float clampedX = Mathf.Clamp(targetPosition.x, minX, maxX);
+        float clampedY = Mathf.Clamp(targetPosition.y, minY, maxY);
 
-            float clampedX = Mathf.Clamp(targetPosition.x, bounds.min.x, bounds.max.x);
-            float clampedY = Mathf.Clamp(targetPosition.y, bounds.min.y, bounds.max.y);
-
-            targetPosition = new Vector3(clampedX, clampedY, targetPosition.z);
-        }
-
+        targetPosition = new Vector3(clampedX, clampedY, targetPosition.z);
         return targetPosition;
     }
 }
