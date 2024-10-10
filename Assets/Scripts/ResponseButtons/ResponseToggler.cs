@@ -23,6 +23,7 @@ public class ResponseToggler : MonoBehaviour
         canToggle = false;
         if (isOpen == false)
         {
+            Debug.Log("Open");
             animator.SetTrigger("Open");
             yield return new WaitForSeconds(AnimationWait);
             canToggle = true;
@@ -31,6 +32,7 @@ public class ResponseToggler : MonoBehaviour
 
         else if (isOpen == true)
         {
+            Debug.Log("Close");
             animator.SetTrigger("Close");
             yield return new WaitForSeconds(AnimationWait);
             canToggle = true;

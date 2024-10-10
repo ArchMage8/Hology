@@ -13,23 +13,15 @@ public class ResponseToggleOpen : MonoBehaviour
         ResponseTray.SetActive(false);
     }
 
-    private void Update()
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            // Check if the ray hits the object with this script attached
-            if (Physics.Raycast(ray, out hit) && hit.transform == transform)
-            {
-                StartCoroutine(AnimationWaitEnable());
-            }
-        }
+        StartCoroutine(AnimationWaitEnable());
     }
+
 
     private IEnumerator AnimationWaitEnable()
     {
+       
         ResponseTray.SetActive(true);
         yield return new WaitForSeconds(AnimationWait);
         PaperManager.Instance.canNext = true;

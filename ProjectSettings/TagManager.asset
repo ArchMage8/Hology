@@ -55,6 +55,9 @@ TagManager:
   - name: Guidebook
     uniqueID: 1848765009
     locked: 0
-  - name: Foreground
+  - name: Inspection
     uniqueID: 2064191425
+    locked: 0
+  - name: Printer
+    uniqueID: 3907512311
     locked: 0
