@@ -55,6 +55,9 @@ TagManager:
   - name: Guidebook
     uniqueID: 1848765009
     locked: 0
+  - name: ButtonTray
+    uniqueID: 105112773
+    locked: 0
   - name: Inspection
     uniqueID: 2064191425
     locked: 0

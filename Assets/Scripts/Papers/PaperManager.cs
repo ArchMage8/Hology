@@ -8,6 +8,7 @@ public class PaperManager : MonoBehaviour
 
     [Header("Paper Objects")]
     public GameObject[] papers;  // Array of gameobjects with PaperProperties
+    [HideInInspector] public GameObject CurrentPaper;
 
     [Header("Delay Settings")]
     public float exitDelay = 2.0f;  // Delay before current paper is disabled
@@ -15,6 +16,7 @@ public class PaperManager : MonoBehaviour
 
     [Header("Outcome Settings")]
     public int maxIncorrectPapers = 3;  // Y: max incorrect papers allowed
+    [HideInInspector] public bool EndOfArray = false;
 
     private int currentPaperIndex = 0;
     private int completedPapers = 0;
@@ -26,6 +28,7 @@ public class PaperManager : MonoBehaviour
     [Header("Clock")]
     public TimerClock timerClock;  // Reference to the TimerClock script
     [HideInInspector] public bool timerExpired = false;  // Flag for the timer expiration
+    
 
     private void Awake()
     {
@@ -62,6 +65,8 @@ public class PaperManager : MonoBehaviour
 
             // Start the Timer System
             StartTimer();
+
+            CurrentPaper = papers[0];
         }
     }
 
@@ -128,6 +133,7 @@ public class PaperManager : MonoBehaviour
 
                     papers[currentPaperIndex].SetActive(true);  // Enable the next paper
                     completedPapers++;
+                    CurrentPaper = papers[currentPaperIndex];
                     canNext = true;  // Set canNext to true only when a new paper is available
                 }
                 else

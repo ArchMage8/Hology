@@ -7,5 +7,6 @@ public class PaperStarts : MonoBehaviour
     private void OnMouseDown()
     {
         PaperManager.Instance.StartSystem();
+        this.gameObject.SetActive(false);
     }
 }
