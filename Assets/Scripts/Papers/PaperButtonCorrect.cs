@@ -6,6 +6,8 @@ public class PaperButtonCorrect : MonoBehaviour
     public float AnimationDelay;
     private Animator animator;
 
+    private Animator PaperAnimator;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -22,6 +24,8 @@ public class PaperButtonCorrect : MonoBehaviour
         private IEnumerator AnimationWait() 
     {
         animator.SetTrigger("Press");
+        PaperAnimator = PaperManager.Instance.CurrentPaper.GetComponent<Animator>();
+        PaperAnimator.SetTrigger("Out");
         yield return new WaitForSeconds(AnimationDelay);
         PaperManager.Instance.NextPaper(false);
     }

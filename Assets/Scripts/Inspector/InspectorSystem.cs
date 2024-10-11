@@ -21,7 +21,7 @@ public class InspectorSystem : MonoBehaviour
     public GameObject ResearchButton;
 
     private bool isInCheckMode = false;
-    private bool canCheck;
+    [HideInInspector] public bool canCheck = false;
     private InspectComponent currentInspectComponent;
 
     void Start()
@@ -71,7 +71,7 @@ public class InspectorSystem : MonoBehaviour
     {
         isInCheckMode = false;
         instruction2.SetActive(false);
-        instruction1.SetActive(true);
+        
 
         if (clickedObject.CompareTag("PaperComponent") || clickedObject.CompareTag("GuidePage"))
         {
@@ -108,5 +108,6 @@ public class InspectorSystem : MonoBehaviour
         yield return new WaitForSeconds(displayDuration);
         obj.SetActive(false);
         canCheck = true;
+        instruction1.SetActive(true);
     }
 }

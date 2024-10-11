@@ -11,7 +11,7 @@ public class InspectorManager : MonoBehaviour
 
     [Header("GameObject References")]
     public GameObject InspectEffect;
-    public BoxCollider2D guideMainCollider;
+    public PolygonCollider2D guideMainCollider;
     [Space(20)]
 
     public GameObject InspectHandler;
@@ -27,13 +27,14 @@ public class InspectorManager : MonoBehaviour
     public void ToggleInspect()
     {
         BackgroundSystem_Toggle();
-        InspectHandler.SetActive(true);
+        //InspectHandler.SetActive(true);
     }
 
 
     public void DisableInspect()
     {
         BackGroundSystem_Disable();
+        //InspectHandler.SetActive(false);
         StartCoroutine(DisableAnimations());
     }
 
@@ -122,7 +123,7 @@ public class InspectorManager : MonoBehaviour
         Animator InspectAnimator = InspectEffect.GetComponent<Animator>();
         InspectAnimator.SetTrigger("Close");
         yield return new WaitForSeconds(AnimationWait);
-        InspectHandler.SetActive(false);
+        //InspectHandler.SetActive(false);
     }
 }
 
