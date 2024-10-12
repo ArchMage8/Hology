@@ -7,6 +7,10 @@ public class PaperButtonHoax : MonoBehaviour
     private Animator animator;
     private Animator PaperAnimator;
 
+    [Header("Audio")]
+    public AudioClip ButtonPress;
+    public SFXManager SFXManager;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -25,6 +29,7 @@ public class PaperButtonHoax : MonoBehaviour
         animator.SetTrigger("Press");
         PaperAnimator = PaperManager.Instance.CurrentPaper.GetComponent<Animator>();
         PaperAnimator.SetTrigger("Out");
+        SFXManager.PlaySound(ButtonPress);
         yield return new WaitForSeconds(AnimationDelay);
         PaperManager.Instance.NextPaper(true);
     }

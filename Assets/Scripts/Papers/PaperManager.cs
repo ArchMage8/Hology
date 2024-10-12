@@ -28,7 +28,16 @@ public class PaperManager : MonoBehaviour
     [Header("Clock")]
     public TimerClock timerClock;  // Reference to the TimerClock script
     [HideInInspector] public bool timerExpired = false;  // Flag for the timer expiration
-    
+
+    [Header("Audio")]
+    public AudioClip PaperIN;
+    public AudioClip PaperOUT;
+    public SFXManager SFXManager;
+    [Space(10)]
+    public AudioClip PrinterSound;
+    public SFXManager_Exception PrinterSoundPlayer;
+
+
 
     private void Awake()
     {
@@ -60,6 +69,7 @@ public class PaperManager : MonoBehaviour
         if (papers.Length > 0)
         {
             papers[0].SetActive(true);  // Enable the first paper
+            SFXManager.PlaySound(PaperIN);
             completedPapers++;
             canNext = true;
 
@@ -85,6 +95,7 @@ public class PaperManager : MonoBehaviour
         {
             currentPaperProps.ErrorPaper.SetActive(true);
             incorrectPapers++;
+            PrinterSoundPlayer.PlaySound(PrinterSound);
             waitingForContinue = true;  // Set the flag to wait for player input
         }
         else
@@ -114,7 +125,7 @@ public class PaperManager : MonoBehaviour
         canNext = false;
         yield return new WaitForSeconds(exitDelay);
 
-        papers[currentPaperIndex].SetActive(false);  // Disable current paper
+        StartCoroutine(DisableCurrentPaper());
 
         if (timerExpired && completedPapers < papers.Length)
         {
@@ -125,6 +136,7 @@ public class PaperManager : MonoBehaviour
         {
             if (currentPaperProps.Hoax == hoax)
             {
+                StartCoroutine(DeletingResearchPaper());
                 currentPaperIndex++;  // Move to the next paper in the array
 
                 if (currentPaperIndex < papers.Length)
@@ -172,5 +184,34 @@ public class PaperManager : MonoBehaviour
             return papers[currentPaperIndex];  // Return the active paper
         }
         return null;  // If no paper is active, return null
+    }
+
+    private IEnumerator DeletingResearchPaper()
+    {
+        GameStateHandler.instance.isPrinting = false;
+        GameObject Temp = GetActivePaper();
+
+        GameObject CurrResearchPaper = Temp.GetComponent<PaperProperties>().ResearchPaper;
+
+        Animator animator = CurrResearchPaper.GetComponent<Animator>();
+
+        animator.SetTrigger("Close");
+        SFXManager.PlaySound(PaperOUT);
+        yield return new WaitForSeconds(1.5f);
+        this.gameObject.SetActive(false);
+    }
+
+    private IEnumerator DisableCurrentPaper()
+    {
+        SFXManager.PlaySound(PaperOUT);
+
+        GameObject Temp = GetActivePaper();
+
+        Animator animator = Temp.GetComponent<Animator>();
+
+        animator.SetTrigger("Close");
+
+        yield return new WaitForSeconds(1.5f);
+        papers[currentPaperIndex].SetActive(false);  // Disable current paper
     }
 }

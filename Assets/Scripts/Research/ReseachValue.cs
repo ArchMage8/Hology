@@ -8,7 +8,7 @@ public class ReseachValue : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (ResearchCode.Instance != null)
+        if (ResearchCode.Instance != null && !GameStateHandler.instance.isInspecting && !GameStateHandler.instance.isPrinting)
         {
             ResearchCode.Instance.AddDigit(digit);
         }

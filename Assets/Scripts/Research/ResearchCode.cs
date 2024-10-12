@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class ResearchCode : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class ResearchCode : MonoBehaviour
     private GameObject currentResearchPaper;
 
     public TextMeshProUGUI codeDisplayText;  // Reference to the TextMeshPro component for displaying the input
+
+    [Header("Audio")]
+    public AudioClip PrinterSound;
+    public AudioClip TrayOut;
+    public SFXManager_Exception SFXPrinter;
+    public SFXManager SFXManager;
 
     void Awake()
     {
@@ -41,8 +48,10 @@ public class ResearchCode : MonoBehaviour
         }
     }
 
-    private void CheckCode()
+    private IEnumerator CheckCode()
     {
+        yield return new WaitForSeconds(1.5f);
+        
         if (playerInput == correctCode)
         {
             CodeCorrect();
@@ -60,7 +69,10 @@ public class ResearchCode : MonoBehaviour
     {
         Debug.Log("Correct code entered!");
         currentResearchPaper.SetActive(true);
-        this.gameObject.SetActive(false);
+        SFXPrinter.PlaySound(PrinterSound);
+        GameStateHandler.instance.isPrinting = true;
+        StartCoroutine(DisableCodeMachine());
+        
     }
 
     private void CodeWrong()
@@ -91,5 +103,15 @@ public class ResearchCode : MonoBehaviour
         {
             codeDisplayText.text = playerInput;  // Update the text with the current input
         }
+    }
+
+    private IEnumerator DisableCodeMachine()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.SetTrigger("Close");
+        SFXManager.PlaySound(TrayOut);
+
+        yield return new WaitForSeconds(1.5f);
+        this.gameObject.SetActive(false);
     }
 }

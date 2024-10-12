@@ -6,6 +6,10 @@ public class ResearchToggle : MonoBehaviour
 {
     public GameObject ResearchSystem;
 
+    [Header("Audio")]
+    public AudioClip TrayIN;
+    public SFXManager SFXManager;
+
     private void Awake()
     {
         ResearchSystem.SetActive(false);
@@ -15,5 +19,7 @@ public class ResearchToggle : MonoBehaviour
     {
         ResearchSystem.SetActive(true);
         this.gameObject.SetActive(false);
+
+        SFXManager.instance.PlaySound(TrayIN);
     }
 }

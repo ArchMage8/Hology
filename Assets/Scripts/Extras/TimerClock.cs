@@ -16,6 +16,10 @@ public class TimerClock : MonoBehaviour
     private float secondsPerGameMinute;
     private float colonToggleTimer = 0f;
 
+    [Header("Audio")]
+    public AudioClip AlarmClockAudio;
+    public SFXManager_Exception AlarmPlayer;
+
     void Start()
     {
         secondsPerGameMinute = realSecondsPerGameHour / 60f;
@@ -71,6 +75,7 @@ public class TimerClock : MonoBehaviour
     private void OnClockEnd()
     {
         Debug.Log("Clock has reached 17:00");
+        AlarmPlayer.PlaySound(AlarmClockAudio);
         PaperManager.Instance.timerExpired = true;
     }
 

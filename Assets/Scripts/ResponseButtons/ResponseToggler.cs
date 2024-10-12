@@ -10,9 +10,14 @@ public class ResponseToggler : MonoBehaviour
     private bool isOpen = false;
     private bool canToggle = true;
 
+    [Header("Audio")]
+    public AudioClip ObjectIn;
+    public AudioClip ObjectOut;
+    public SFXManager SFXManager;
+
     private void OnMouseDown()
     {
-        if (canToggle)
+        if (canToggle && !GameStateHandler.instance.isInspecting && !GameStateHandler.instance.isPrinting)
         {
             StartCoroutine(AnimationWaitToggle());
         }
@@ -25,6 +30,7 @@ public class ResponseToggler : MonoBehaviour
         {
             Debug.Log("Open");
             animator.SetTrigger("Open");
+            SFXManager.PlaySound(ObjectIn);
             yield return new WaitForSeconds(AnimationWait);
             canToggle = true;
             isOpen = true;
@@ -34,11 +40,17 @@ public class ResponseToggler : MonoBehaviour
         {
             Debug.Log("Close");
             animator.SetTrigger("Close");
+            SFXManager.PlaySound(ObjectIn);
             yield return new WaitForSeconds(AnimationWait);
             canToggle = true;
             isOpen = false;
 
         }
 
+    }
+
+    public void ResponseExternalReference()
+    {
+          StartCoroutine(AnimationWaitToggle());
     }
 }

@@ -17,8 +17,10 @@ public class InspectorSystem : MonoBehaviour
 
     [Header("Research System")]
     public GameObject GuideResearchPage;
+    public GameObject IndependetPublisherPage;
     public GameObject ResearchIcon;
     public GameObject ResearchButton;
+
 
     private bool isInCheckMode = false;
     [HideInInspector] public bool canCheck = false;
@@ -82,8 +84,15 @@ public class InspectorSystem : MonoBehaviour
                 StartCoroutine(DisplayTemporary(ResearchIcon));
                 ResearchButton.SetActive(true);
             }
-            
-            
+
+            else if (clickedObject == IndependetPublisherPage && currentInspectComponent.Target_Page == IndependetPublisherPage)
+            {
+                //Research Excepetion
+                StartCoroutine(DisplayTemporary(ResearchIcon));
+                ResearchButton.SetActive(true);
+            }
+
+
             else if (clickedObject == currentInspectComponent.Target_Page)
             {
                 if (currentInspectComponent.positiveResponse)
