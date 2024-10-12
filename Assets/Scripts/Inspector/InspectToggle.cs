@@ -25,9 +25,10 @@ public class InspectToggle : MonoBehaviour
     {
         if (inspectorManager != null && canToggle && !GameStateHandler.instance.isPrinting)
         {
-            ResponseTray.ResponseExternalReference();
+            ResponseTray.ResponseExternal();
 
-            
+
+
             if (inspectorManager.isEnabled)
             {
                 inspectorManager.DisableInspect();

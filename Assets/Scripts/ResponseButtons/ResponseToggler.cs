@@ -28,15 +28,37 @@ public class ResponseToggler : MonoBehaviour
         canToggle = false;
         if (isOpen == false)
         {
+            isOpen = true;
             Debug.Log("Open");
             animator.SetTrigger("Open");
             SFXManager.PlaySound(ObjectIn);
             yield return new WaitForSeconds(AnimationWait);
             canToggle = true;
-            isOpen = true;
+            
         }
 
         else if (isOpen == true)
+        {
+            isOpen = false;
+            Debug.Log("Close");
+            animator.SetTrigger("Close");
+            SFXManager.PlaySound(ObjectIn);
+            yield return new WaitForSeconds(AnimationWait);
+            canToggle = true;
+            
+
+        }
+
+    }
+
+    public void ResponseExternal()
+    {
+        StartCoroutine(ResponseExternalReference());
+    }
+
+    private IEnumerator ResponseExternalReference()
+    {
+        if (isOpen == true)
         {
             Debug.Log("Close");
             animator.SetTrigger("Close");
@@ -46,11 +68,5 @@ public class ResponseToggler : MonoBehaviour
             isOpen = false;
 
         }
-
-    }
-
-    public void ResponseExternalReference()
-    {
-          StartCoroutine(AnimationWaitToggle());
     }
 }
