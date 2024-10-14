@@ -72,7 +72,7 @@ public class TutorialSystem : MonoBehaviour
     private void EndTutorial()
     {
         tutorialEffect.SetActive(false);  // Disable the tutorial effect
-        ToggleButton.SetActive(true);
+        ToggleButton.SetActive(false);
 
         // Disable all tutorial objects
         foreach (GameObject obj in tutorialObjects)
