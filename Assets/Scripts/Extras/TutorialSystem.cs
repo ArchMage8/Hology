@@ -5,10 +5,13 @@ public class TutorialSystem : MonoBehaviour
 {
     public GameObject[] tutorialObjects;  // Array of tutorial objects
     public GameObject tutorialEffect;     // Effect shown during tutorial
+    public GameObject ToggleButton;
     public float delayBetweenObjects = 1.0f;  // Delay before moving to the next object
 
     private int currentObjectIndex = 0;  // Track the current tutorial object
     private bool canProceed = false;     // Track if the player can proceed to the next tutorial object
+    private bool Started = false;
+
 
     void Start()
     {
@@ -31,12 +34,13 @@ public class TutorialSystem : MonoBehaviour
             currentObjectIndex = 0;
             canProceed = false;
             StartCoroutine(DelayNextStep());
+            Started = true;
         }
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canProceed)
+        if (Input.GetMouseButtonDown(0) && canProceed && Started)
         {
             ProceedToNextObject();
         }
@@ -68,6 +72,7 @@ public class TutorialSystem : MonoBehaviour
     private void EndTutorial()
     {
         tutorialEffect.SetActive(false);  // Disable the tutorial effect
+        ToggleButton.SetActive(true);
 
         // Disable all tutorial objects
         foreach (GameObject obj in tutorialObjects)

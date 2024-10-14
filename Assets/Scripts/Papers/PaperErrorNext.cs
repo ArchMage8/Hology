@@ -10,6 +10,7 @@ public class PaperErrorNext : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log(ParentObject.name);
         Animator animator = ParentObject.GetComponent<Animator>();
         animator.SetTrigger("Out");
         StartCoroutine(AnimationWait());

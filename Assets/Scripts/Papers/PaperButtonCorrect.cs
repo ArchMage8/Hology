@@ -28,11 +28,20 @@ public class PaperButtonCorrect : MonoBehaviour
         private IEnumerator AnimationWait() 
     {
         animator.SetTrigger("Press");
-        PaperAnimator = PaperManager.Instance.CurrentPaper.GetComponent<Animator>();
-        PaperAnimator.SetTrigger("Out");
-        SFXManager.PlaySound(ButtonPress);
-        yield return new WaitForSeconds(AnimationDelay);
-        PaperManager.Instance.NextPaper(false);
+        if (PaperManager.Instance.Started)
+        {
+            Debug.Log("Banana");
+            PaperAnimator = PaperManager.Instance.GetActivePaper().GetComponent<Animator>();
+            PaperAnimator.SetTrigger("Close");
+            SFXManager.PlaySound(ButtonPress);
+            yield return new WaitForSeconds(AnimationDelay);
+            PaperManager.Instance.NextPaper(false);
+        }
+
+        else
+        {
+            yield return null;
+        }
     }
 }
 

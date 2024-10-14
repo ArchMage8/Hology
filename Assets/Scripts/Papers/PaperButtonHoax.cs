@@ -27,11 +27,18 @@ public class PaperButtonHoax : MonoBehaviour
     private IEnumerator AnimationWait()
     {
         animator.SetTrigger("Press");
-        PaperAnimator = PaperManager.Instance.CurrentPaper.GetComponent<Animator>();
-        PaperAnimator.SetTrigger("Out");
-        SFXManager.PlaySound(ButtonPress);
-        yield return new WaitForSeconds(AnimationDelay);
-        PaperManager.Instance.NextPaper(true);
+        if (PaperManager.Instance.Started)
+        {
+            PaperAnimator = PaperManager.Instance.GetActivePaper().GetComponent<Animator>();
+            PaperAnimator.SetTrigger("Close");
+            SFXManager.PlaySound(ButtonPress);
+            yield return new WaitForSeconds(AnimationDelay);
+            PaperManager.Instance.NextPaper(true);
+        }
+        else
+        {
+            yield return null;
+        }
     }
 }
 

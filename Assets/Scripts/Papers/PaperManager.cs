@@ -28,6 +28,7 @@ public class PaperManager : MonoBehaviour
     [Header("Clock")]
     public TimerClock timerClock;  // Reference to the TimerClock script
     [HideInInspector] public bool timerExpired = false;  // Flag for the timer expiration
+    [HideInInspector] public bool Started = false;
 
     [Header("Audio")]
     public AudioClip PaperIN;
@@ -72,6 +73,7 @@ public class PaperManager : MonoBehaviour
             SFXManager.PlaySound(PaperIN);
             completedPapers++;
             canNext = true;
+            Started = true;
 
             // Start the Timer System
             StartTimer();
@@ -90,13 +92,11 @@ public class PaperManager : MonoBehaviour
         if (!canNext) return;
 
         PaperProperties currentPaperProps = papers[currentPaperIndex].GetComponent<PaperProperties>();
+        canNext = false;
 
         if (currentPaperProps.Hoax != hoax)
         {
-            currentPaperProps.ErrorPaper.SetActive(true);
-            incorrectPapers++;
-            PrinterSoundPlayer.PlaySound(PrinterSound);
-            waitingForContinue = true;  // Set the flag to wait for player input
+            StartCoroutine(printError(currentPaperProps));
         }
         else
         {
@@ -122,7 +122,8 @@ public class PaperManager : MonoBehaviour
 
     private IEnumerator HandleNextPaper(PaperProperties currentPaperProps, bool hoax)
     {
-        canNext = false;
+        SFXManager.PlaySound(PaperOUT);
+        //canNext = false;
         yield return new WaitForSeconds(exitDelay);
 
         StartCoroutine(DisableCurrentPaper());
@@ -143,6 +144,7 @@ public class PaperManager : MonoBehaviour
                 {
                     yield return new WaitForSeconds(nextPaperDelay);
 
+                    SFXManager.PlaySound(PaperIN);
                     papers[currentPaperIndex].SetActive(true);  // Enable the next paper
                     completedPapers++;
                     CurrentPaper = papers[currentPaperIndex];
@@ -198,13 +200,12 @@ public class PaperManager : MonoBehaviour
         animator.SetTrigger("Close");
         SFXManager.PlaySound(PaperOUT);
         yield return new WaitForSeconds(1.5f);
-        this.gameObject.SetActive(false);
+        CurrResearchPaper.SetActive(false);
     }
 
     private IEnumerator DisableCurrentPaper()
     {
-        SFXManager.PlaySound(PaperOUT);
-
+        
         GameObject Temp = GetActivePaper();
 
         Animator animator = Temp.GetComponent<Animator>();
@@ -212,6 +213,16 @@ public class PaperManager : MonoBehaviour
         animator.SetTrigger("Close");
 
         yield return new WaitForSeconds(1.5f);
-        papers[currentPaperIndex].SetActive(false);  // Disable current paper
+        Temp.SetActive(false);  // Disable current paper
+    }
+
+    private IEnumerator printError(PaperProperties currProps)
+    {
+        DisableCurrentPaper();
+        yield return new WaitForSeconds(1.5f);
+        currProps.ErrorPaper.SetActive(true);
+        incorrectPapers++;
+        PrinterSoundPlayer.PlaySound(PrinterSound);
+        waitingForContinue = true;  // Set the flag to wait for player input
     }
 }

@@ -64,3 +64,6 @@ TagManager:
   - name: Printer
     uniqueID: 3907512311
     locked: 0
+  - name: Tutorial
+    uniqueID: 1611285805
+    locked: 0
