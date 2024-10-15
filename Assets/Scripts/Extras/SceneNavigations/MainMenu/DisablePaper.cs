@@ -5,6 +5,7 @@ using UnityEngine;
 public class DisablePaper : MonoBehaviour
 {
     private Animator animator;
+    public AudioClip paperOut;
 
     private void OnMouseDown()
     {
@@ -15,6 +16,7 @@ public class DisablePaper : MonoBehaviour
     private IEnumerator AnimationDelay()
     {
         animator.SetTrigger("Out");
+        SFXManager.instance.PlaySound(paperOut);
         yield return new WaitForSeconds(1f);
         this.gameObject.SetActive(false);
         MainMenuSystem.Instance.PaperActive = false;

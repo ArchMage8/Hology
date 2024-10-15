@@ -12,6 +12,8 @@ public class MainMenuSystem : MonoBehaviour
 
     public Animator FadeAnimator;
     public int LevelSelectIndex;
+    public AudioClip PrintSound;
+    public SFXManager_Exception printSoundPlayer;
     [HideInInspector]public bool PaperActive;
 
     private void Awake()
@@ -35,6 +37,7 @@ public class MainMenuSystem : MonoBehaviour
         if (!PaperActive)
         {
             PaperActive = true;
+            printSoundPlayer.PlaySound(PrintSound);
             StartPaper.SetActive(true);
             StartCoroutine(StartTheGame());
         }
@@ -45,6 +48,7 @@ public class MainMenuSystem : MonoBehaviour
         if (!PaperActive)
         {
             PaperActive = true;
+            printSoundPlayer.PlaySound(PrintSound);
             CreditsPaper.SetActive(true);
 
         }
