@@ -11,6 +11,7 @@ public class ResearchCode : MonoBehaviour
     public PaperManager paperManager;
     private GameObject currentActivePaper;
     private GameObject currentResearchPaper;
+    private bool isChecking = false;
 
     public TextMeshProUGUI codeDisplayText;  // Reference to the TextMeshPro component for displaying the input
 
@@ -19,6 +20,9 @@ public class ResearchCode : MonoBehaviour
     public AudioClip TrayOut;
     public SFXManager_Exception SFXPrinter;
     public SFXManager SFXManager;
+
+    [Header("Main Machine")]
+    public Animator MachineAnimator;
 
     void Awake()
     {
@@ -32,7 +36,7 @@ public class ResearchCode : MonoBehaviour
             Destroy(gameObject);
         }
 
-        GetCurrentPaper();
+        
     }
 
     public void AddDigit(string digit)
@@ -41,17 +45,20 @@ public class ResearchCode : MonoBehaviour
         {
             playerInput += digit;
             UpdateDisplay();  // Update the displayed input
-            if (playerInput.Length == 3)
+            if(playerInput.Length == 3)
             {
-                CheckCode();
+                StartCoroutine(CheckCode());
             }
         }
     }
 
     private IEnumerator CheckCode()
     {
-        yield return new WaitForSeconds(1.5f);
+        GetCurrentPaper();
+        isChecking = true;
         
+        yield return new WaitForSeconds(1.5f);
+
         if (playerInput == correctCode)
         {
             CodeCorrect();
@@ -67,29 +74,29 @@ public class ResearchCode : MonoBehaviour
 
     private void CodeCorrect()
     {
-        Debug.Log("Correct code entered!");
+        
         currentResearchPaper.SetActive(true);
         SFXPrinter.PlaySound(PrinterSound);
         GameStateHandler.instance.isPrinting = true;
-        StartCoroutine(DisableCodeMachine());
+        MachineAnimator.SetTrigger("Out");
         
+        isChecking = false;
+        StartCoroutine(DisableCodeMachine());
+
     }
 
     private void CodeWrong()
     {
-        Debug.Log("Wrong code entered!");
+        //Debug.Log("Wrong code entered!");
         playerInput = "";
+        isChecking = false;
         // Add logic for wrong code
     }
 
     private void GetCurrentPaper()
     {
-        GameObject activePaper = PaperManager.Instance.GetActivePaper();  // Get the active paper from PaperManager
-
-        if (activePaper != null)
-        {
-            currentActivePaper = activePaper;
-        }
+        currentActivePaper = PaperManager.Instance.GetActivePaper();
+        GameObject activePaper = currentActivePaper;
 
         PaperProperties currentProperties = activePaper.GetComponent<PaperProperties>();
         correctCode = currentProperties.ResearchCode;
@@ -107,11 +114,12 @@ public class ResearchCode : MonoBehaviour
 
     private IEnumerator DisableCodeMachine()
     {
-        Animator animator = GetComponent<Animator>();
-        animator.SetTrigger("Close");
+        //Animator animator = GetComponent<Animator>();
+        //animator.SetTrigger("Close");
         SFXManager.PlaySound(TrayOut);
-
+        //Debug.Log("Test");
         yield return new WaitForSeconds(1.5f);
         this.gameObject.SetActive(false);
+        MachineAnimator.gameObject.SetActive(false);
     }
 }

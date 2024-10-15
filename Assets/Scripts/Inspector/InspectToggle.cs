@@ -41,6 +41,7 @@ public class InspectToggle : MonoBehaviour
             }
             else
             {
+                inspectorSystem.ResetDisplay();
                 inspectorManager.ToggleInspect();
                 GameStateHandler.instance.isInspecting = true;
                 inspectorSystem.gameObject.SetActive(true);
@@ -57,5 +58,30 @@ public class InspectToggle : MonoBehaviour
         canToggle = false;
         yield return new WaitForSeconds(1f);
         canToggle = true;
+    }
+
+    public void ExternalResponse()
+    {
+        if (inspectorManager.isEnabled)
+        {
+            inspectorManager.DisableInspect();
+            GameStateHandler.instance.isInspecting = false;
+            inspectorSystem.canCheck = false;
+            inspectorSystem.gameObject.SetActive(false);
+            StartCoroutine(bugDelay());
+            SFXManager.PlaySound(ObjectOut);
+            animator.SetTrigger("Close");
+        }
+        else
+        {
+            inspectorSystem.ResetDisplay();
+            inspectorManager.ToggleInspect();
+            GameStateHandler.instance.isInspecting = true;
+            inspectorSystem.gameObject.SetActive(true);
+            inspectorSystem.canCheck = true;
+            StartCoroutine(bugDelay());
+            SFXManager.PlaySound(ObjectIn);
+            animator.SetTrigger("Open");
+        }
     }
 }

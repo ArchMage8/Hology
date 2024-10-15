@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ResearchToggle : MonoBehaviour
 {
-    public GameObject ResearchSystem;
+    public GameObject ResearchParent;
+    public GameObject ResearchMonitor;
+    public InspectToggle inspectToggle;
 
     [Header("Audio")]
     public AudioClip TrayIN;
@@ -12,14 +14,20 @@ public class ResearchToggle : MonoBehaviour
 
     private void Awake()
     {
-        ResearchSystem.SetActive(false);
+        ResearchParent.SetActive(false);
     }
 
     private void OnMouseDown()
     {
-        ResearchSystem.SetActive(true);
-        this.gameObject.SetActive(false);
+        if (!GameStateHandler.instance.isPrinting)
+        {
+            ResearchMonitor.GetComponent<ResearchCode>().enabled = true;
+            inspectToggle.ExternalResponse();
+            ResearchParent.SetActive(true);
+            
+            this.gameObject.SetActive(false);
 
-        SFXManager.instance.PlaySound(TrayIN);
+            SFXManager.instance.PlaySound(TrayIN);
+        }
     }
 }

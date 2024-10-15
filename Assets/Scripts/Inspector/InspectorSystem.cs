@@ -119,4 +119,15 @@ public class InspectorSystem : MonoBehaviour
         canCheck = true;
         instruction1.SetActive(true);
     }
+
+    public void ResetDisplay()
+    {
+        instruction1.SetActive(true);
+        instruction2.SetActive(false);
+        noConnect.SetActive(false);
+        positiveImage.SetActive(false);
+        negativeImage.SetActive(false);
+        ResearchIcon.SetActive(false);
+        ResearchButton.SetActive(false);
+    }
 }

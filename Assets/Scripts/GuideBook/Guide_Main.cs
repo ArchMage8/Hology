@@ -45,7 +45,7 @@ public class Guide_Main : MonoBehaviour
     {
         if (Can_Change)
         {
-            Debug.Log("Test Forward");
+            //Debug.Log("Test Forward");
             int nextIndex = CurrentIndex + 1;
             if (nextIndex < pages.Length)
             {

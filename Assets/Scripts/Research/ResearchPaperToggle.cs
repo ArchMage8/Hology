@@ -5,7 +5,7 @@ using UnityEngine;
 public class ResearchPaperToggle : MonoBehaviour
 {
     private float AnimationWait = 1.5f;
-    private Animator animator;
+    public Animator animator;
     private bool isVisible = true;
 
     [Header("Audio")]
@@ -25,11 +25,14 @@ public class ResearchPaperToggle : MonoBehaviour
     {
         if (isVisible)
         {
+            Debug.Log("Test");
+            isVisible = false;
             GameStateHandler.instance.isPrinting = false;
             animator.SetTrigger("Close");
             SFXManager.instance.PlaySound(PaperOut);
             yield return new WaitForSeconds(AnimationWait);
             this.gameObject.SetActive(false);
+            
             
         }
 

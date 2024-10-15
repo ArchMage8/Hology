@@ -6,8 +6,8 @@ public class GameStateHandler : MonoBehaviour
 {
     public static GameStateHandler instance;
 
-    [HideInInspector] public bool isPrinting = false;
-    [HideInInspector] public bool isInspecting = false;
+    public bool isPrinting = false;
+    public bool isInspecting = false;
 
     private void Awake()
     {
