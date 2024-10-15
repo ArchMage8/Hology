@@ -35,7 +35,7 @@ public class StartGame : MonoBehaviour
 
     private void OnMouseDown()
     {
-        SFXManager.instance.PlaySound();
+        SFXManager.instance.PlaySound(ButtonSound);
         MainMenuSystem.Instance.StartGame();
     }
 }

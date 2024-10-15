@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class DisablePaper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator animator;
+
+    private void OnMouseDown()
     {
         
+        this.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator AnimationDelay()
     {
-        
+        animator.SetTrigger("Out");
+        yield return new WaitForSeconds(1f);
+        this.gameObject.SetActive(false);
+        MainMenuSystem.Instance.PaperActive = false;
     }
 }
+
