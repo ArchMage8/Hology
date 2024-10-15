@@ -161,22 +161,19 @@ public class PaperManager : MonoBehaviour
     // Outcome 1: Called when the system reaches the end of the paper array
     private void Outcome1()
     {
-        Debug.Log("Reached the end of the paper array.");
-        
+        InGameSceneNavigator.Instance.FinishLevel();
     }
 
     // Outcome 2: Called when incorrect papers exceed maxIncorrectPapers
     private void Outcome2()
     {
-        Debug.Log("Too many incorrect papers.");
-        
+        InGameSceneNavigator.Instance.ExceedMistakeLimit();
     }
 
     // Outcome 3: Called when the timer runs out and the player hasn't completed all papers
     private void Outcome3()
     {
-        Debug.Log("Time's up! Player didn't complete all papers.");
-      
+        InGameSceneNavigator.Instance.ExceedTimeLimit();
     }
 
     public GameObject GetActivePaper()
