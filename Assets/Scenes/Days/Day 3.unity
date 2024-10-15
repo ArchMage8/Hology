@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 81736679}
+  Target_Page: {fileID: 1516437260}
   positiveResponse: 1
 --- !u!61 &127534919
 BoxCollider2D:
@@ -1925,7 +1925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target_Page: {fileID: 1516437260}
-  positiveResponse: 0
+  positiveResponse: 1
 --- !u!61 &194639636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3688,8 +3688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 826715139}
-  positiveResponse: 1
+  Target_Page: {fileID: 1516437260}
+  positiveResponse: 0
 --- !u!61 &487950812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5436,7 +5436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 826715139}
+  Target_Page: {fileID: 1516437260}
   positiveResponse: 1
 --- !u!1 &818065074
 GameObject:
@@ -7951,7 +7951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 868064137}
+  Target_Page: {fileID: 1516437260}
   positiveResponse: 1
 --- !u!61 &1134044803
 BoxCollider2D:
@@ -10180,8 +10180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 826715139}
-  positiveResponse: 1
+  Target_Page: {fileID: 1516437260}
+  positiveResponse: 0
 --- !u!61 &1335934172
 BoxCollider2D:
   m_ObjectHideFlags: 0
