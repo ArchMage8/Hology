@@ -1273,8 +1273,8 @@ MonoBehaviour:
   Hoax: 1
   ErrorPaper: {fileID: 1733976389}
   Lifestyle: 0
-  ResearchCode: 
-  ResearchPaper: {fileID: 1166847335}
+  ResearchCode: 622
+  ResearchPaper: {fileID: 1867091718}
 --- !u!1 &92392554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 81736679}
+  Target_Page: {fileID: 826715139}
   positiveResponse: 1
 --- !u!61 &127534919
 BoxCollider2D:
@@ -1925,7 +1925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target_Page: {fileID: 1516437260}
-  positiveResponse: 0
+  positiveResponse: 1
 --- !u!61 &194639636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7250,6 +7250,7 @@ Transform:
   - {fileID: 1134044801}
   - {fileID: 972776829}
   - {fileID: 487950810}
+  - {fileID: 2070040345}
   m_Father: {fileID: 1837231320}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9400,6 +9401,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1274124755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5418740214764494860, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
+  m_PrefabInstance: {fileID: 5418740214721521640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1285486103
 GameObject:
   m_ObjectHideFlags: 0
@@ -10174,8 +10180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 826715139}
-  positiveResponse: 1
+  Target_Page: {fileID: 1274124755}
+  positiveResponse: 0
 --- !u!61 &1335934172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10832,7 +10838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target_Page: {fileID: 565783911}
-  positiveResponse: 1
+  positiveResponse: 0
 --- !u!61 &1442343758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10904,7 +10910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 81736679}
+  Target_Page: {fileID: 826715139}
   positiveResponse: 1
 --- !u!61 &1452494469
 BoxCollider2D:
@@ -10919,7 +10925,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019307613, y: -0.03311354}
+  m_Offset: {x: 2.6375299, y: 0.24209721}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10930,7 +10936,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.3026524, y: 1.6092845}
+  m_Size: {x: 9.706021, y: 1.058863}
   m_EdgeRadius: 0
 --- !u!1 &1465631783
 GameObject:
@@ -13061,7 +13067,7 @@ MonoBehaviour:
   Hoax: 1
   ErrorPaper: {fileID: 1828635674}
   Lifestyle: 0
-  ResearchCode: 
+  ResearchCode: 622
   ResearchPaper: {fileID: 841436590}
 --- !u!1 &1837800753 stripped
 GameObject:
@@ -14892,6 +14898,79 @@ Transform:
   m_Father: {fileID: 565974443}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2070040344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2070040345}
+  - component: {fileID: 2070040347}
+  - component: {fileID: 2070040346}
+  m_Layer: 0
+  m_Name: Headline
+  m_TagString: PaperComponent
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2070040345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070040344}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.98, y: -0.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1046066572}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070040346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070040344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target_Page: {fileID: 868064137}
+  positiveResponse: 1
+--- !u!61 &2070040347
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070040344}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.29082203, y: 0.05172199}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.027629, y: 1.5870208}
+  m_EdgeRadius: 0
 --- !u!1 &2085971522
 GameObject:
   m_ObjectHideFlags: 0
@@ -14937,7 +15016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07c2a6e645c322479a863328ba9e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target_Page: {fileID: 2139590695}
+  Target_Page: {fileID: 1516437260}
   positiveResponse: 1
 --- !u!61 &2085971525
 BoxCollider2D:
@@ -15349,11 +15428,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2139590695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5418740212683388879, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
-  m_PrefabInstance: {fileID: 5418740214721521640}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2146351598
 GameObject:
   m_ObjectHideFlags: 0
