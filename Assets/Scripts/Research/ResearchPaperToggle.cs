@@ -43,6 +43,7 @@ public class ResearchPaperToggle : MonoBehaviour
             SFXManager.instance.PlaySound(PaperOut);
             yield return new WaitForSeconds(AnimationWait);
             this.gameObject.SetActive(false);
+            isVisible = true;
             
         }
     }

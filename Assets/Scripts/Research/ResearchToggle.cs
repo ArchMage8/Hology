@@ -24,7 +24,7 @@ public class ResearchToggle : MonoBehaviour
             ResearchMonitor.GetComponent<ResearchCode>().enabled = true;
             inspectToggle.ExternalResponse();
             ResearchParent.SetActive(true);
-            
+            GameStateHandler.instance.isResearching = true;
             this.gameObject.SetActive(false);
 
             SFXManager.instance.PlaySound(TrayIN);

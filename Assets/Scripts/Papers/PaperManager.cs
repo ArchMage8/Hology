@@ -123,6 +123,7 @@ public class PaperManager : MonoBehaviour
     private IEnumerator HandleNextPaper(PaperProperties currentPaperProps, bool hoax)
     {
         SFXManager.PlaySound(PaperOUT);
+        GameStateHandler.instance.isResearching = false;
         //canNext = false;
         yield return new WaitForSeconds(exitDelay);
 

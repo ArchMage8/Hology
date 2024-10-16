@@ -8,6 +8,7 @@ public class GameStateHandler : MonoBehaviour
 
     public bool isPrinting = false;
     public bool isInspecting = false;
+    public bool isResearching = false;
 
     private void Awake()
     {
