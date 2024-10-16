@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResearchPaperToggle : MonoBehaviour
 {
-    private float AnimationWait = 1.5f;
+    private float AnimationWait = 0.5f;
     public Animator animator;
     private bool isVisible = true;
 
@@ -31,7 +31,7 @@ public class ResearchPaperToggle : MonoBehaviour
             animator.SetTrigger("Close");
             SFXManager.instance.PlaySound(PaperOut);
             yield return new WaitForSeconds(AnimationWait);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
             
             
         }
@@ -42,7 +42,7 @@ public class ResearchPaperToggle : MonoBehaviour
             animator.SetTrigger("Open");
             SFXManager.instance.PlaySound(PaperOut);
             yield return new WaitForSeconds(AnimationWait);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
             isVisible = true;
             
         }

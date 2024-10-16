@@ -30,6 +30,25 @@ public class InspectorManager : MonoBehaviour
         //InspectHandler.SetActive(true);
     }
 
+    private void Update()
+    {
+        if(GameStateHandler.instance.isPrinting || GameStateHandler.instance.isResearching)
+        {
+            foreach (var colliderObjects in paperColliders)
+            {
+                colliderObjects.SetActive(false);
+            }
+        }
+
+        else
+        {
+            foreach (var colliderObjects in paperColliders)
+            {
+                colliderObjects.SetActive(true);
+            }
+        }
+    }
+
 
     public void DisableInspect()
     {

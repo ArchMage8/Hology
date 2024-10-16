@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class DialogueSystem : MonoBehaviour
     public string[] dialogues;  // Array of dialogues
     public float typingSpeed = 0.05f;  // Speed at which text appears
     public float NextDelay = 1.0f;  // Delay before moving to the next dialogue
+    public int TargetScene;
 
     private int currentDialogueIndex = 0;  // Track current dialogue
     private bool isTyping = false;  // Track if typing is in progress
@@ -100,6 +102,6 @@ public class DialogueSystem : MonoBehaviour
     private void EndDialogue()
     {
         Debug.Log("End of dialogue array.");
-        // Logic to be added later
+        SceneManager.LoadScene(TargetScene);
     }
 }

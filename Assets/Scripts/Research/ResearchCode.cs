@@ -77,6 +77,7 @@ public class ResearchCode : MonoBehaviour
         
         currentResearchPaper.SetActive(true);
         SFXPrinter.PlaySound(PrinterSound);
+        GameStateHandler.instance.isResearching = false;
         GameStateHandler.instance.isPrinting = true;
         MachineAnimator.SetTrigger("Out");
         

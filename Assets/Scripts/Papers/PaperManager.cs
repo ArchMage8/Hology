@@ -138,7 +138,7 @@ public class PaperManager : MonoBehaviour
         {
             if (currentPaperProps.Hoax == hoax)
             {
-                StartCoroutine(DeletingResearchPaper());
+               
                 currentPaperIndex++;  // Move to the next paper in the array
 
                 if (currentPaperIndex < papers.Length)
@@ -193,23 +193,20 @@ public class PaperManager : MonoBehaviour
 
         GameObject CurrResearchPaper = Temp.GetComponent<PaperProperties>().ResearchPaper;
 
-        Animator animator = CurrResearchPaper.GetComponent<Animator>();
-
-        animator.SetTrigger("Close");
-        SFXManager.PlaySound(PaperOUT);
-        yield return new WaitForSeconds(1.5f);
+        //Animator animator = CurrResearchPaper.GetComponent<Animator>();
+        yield return new WaitForSeconds(0f);
         CurrResearchPaper.SetActive(false);
     }
 
     private IEnumerator DisableCurrentPaper()
     {
-        
+        StartCoroutine(DeletingResearchPaper());
         GameObject Temp = GetActivePaper();
-
+        
         Animator animator = Temp.GetComponent<Animator>();
 
         animator.SetTrigger("Close");
-
+        
         yield return new WaitForSeconds(1.5f);
         Temp.SetActive(false);  // Disable current paper
     }

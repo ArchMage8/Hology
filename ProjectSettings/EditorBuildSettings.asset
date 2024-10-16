@@ -8,4 +8,34 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 4f156d32265365444bdbfb0812510dff
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Intro.unity
+    guid: bae2cd0cfe9933b4795f3b68b313975c
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/MistakesFail.unity
+    guid: 720ae24c4527e62438a807748ecc6bd5
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/TimeLimitFail.unity
+    guid: 02ba54bea85c4384cbd6ffa26b736505
+  - enabled: 1
+    path: Assets/Scenes/Days/Day 1.unity
+    guid: b356fa566d831f6479fa18b7ad08e254
+  - enabled: 1
+    path: Assets/Scenes/Days/Day 2.unity
+    guid: 95188f0d12ce5184e834e658f5de97c8
+  - enabled: 1
+    path: Assets/Scenes/Days/Day 3.unity
+    guid: 836b6edff6dd14f4790737ebf0ff8408
+  - enabled: 1
+    path: Assets/Scenes/Days/Day 4.unity
+    guid: 6a06fe79667a04541a387aa15d11d88d
+  - enabled: 1
+    path: Assets/Scenes/Days/Day 5.unity
+    guid: 2d57146b16b763943b136b9d20849f97
+  - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: cc83bb565c8096d4a8e362448d545007
   m_configObjects: {}

@@ -50,11 +50,6 @@ public class TimerClock : MonoBehaviour
         }
     }
 
-    public void StartClock()
-    {
-        isClockRunning = true;
-    }
-
     private void UpdateClock()
     {
         minutes += 15;
@@ -71,6 +66,12 @@ public class TimerClock : MonoBehaviour
             OnClockEnd();
         }
     }
+
+    public void StartClock()
+    {
+        isClockRunning = true;
+    }
+
 
     private void OnClockEnd()
     {

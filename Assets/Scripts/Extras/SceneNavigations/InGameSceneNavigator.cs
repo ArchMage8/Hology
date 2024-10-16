@@ -12,6 +12,7 @@ public class InGameSceneNavigator : MonoBehaviour
 
     public GameObject completePrint;
     public Animator FadeAnimator;
+    public float completeDelay = 3f;
 
     private void Awake()
     {
@@ -55,7 +56,7 @@ public class InGameSceneNavigator : MonoBehaviour
     private IEnumerator LoadTargetScene(int Target)
     {
         FadeAnimator.SetTrigger("EndScene");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(completeDelay);
         SceneManager.LoadScene(Target);
     }
 }

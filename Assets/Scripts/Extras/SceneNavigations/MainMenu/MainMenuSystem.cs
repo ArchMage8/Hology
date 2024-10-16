@@ -50,6 +50,7 @@ public class MainMenuSystem : MonoBehaviour
             PaperActive = true;
             printSoundPlayer.PlaySound(PrintSound);
             CreditsPaper.SetActive(true);
+            StartCoroutine(PaperEndDelay());
 
         }
     }
@@ -67,4 +68,10 @@ public class MainMenuSystem : MonoBehaviour
         SceneManager.LoadScene(LevelSelectIndex);
     }
 
+    private IEnumerator PaperEndDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        PaperActive = false;
+
+    }
 }

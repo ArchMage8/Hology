@@ -55,14 +55,14 @@ TagManager:
   - name: ButtonTray
     uniqueID: 105112773
     locked: 0
+  - name: Guidebook
+    uniqueID: 1848765009
+    locked: 0
   - name: Inspection
     uniqueID: 2064191425
     locked: 0
   - name: ResearchMonitor
     uniqueID: 565051139
-    locked: 0
-  - name: Guidebook
-    uniqueID: 1848765009
     locked: 0
   - name: Printer
     uniqueID: 3907512311
