@@ -11,6 +11,7 @@ public class PaperStarts : MonoBehaviour
     private void OnMouseDown()
     {
         PaperManager.Instance.StartSystem();
+        NPC_Main.Instance.StartSystem();
         SFXManager.PlaySound(ButtonPress);
         this.gameObject.SetActive(false);
     }
