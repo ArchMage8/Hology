@@ -5784,7 +5784,7 @@ Animator:
   m_GameObject: {fileID: 841436590}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6fc5d1da64274444ca440c364c61c975, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9a363c56d9fc7db43809d092ebd35a11, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11130,6 +11130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPrinting: 0
   isInspecting: 0
+  isResearching: 0
 --- !u!1 &1474238819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5418740213357133451, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
