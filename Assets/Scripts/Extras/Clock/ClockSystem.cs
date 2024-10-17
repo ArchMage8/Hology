@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class ClockSystem : MonoBehaviour
 {
+    public static ClockSystem Instance { get; private set; }
+
     public TextMeshProUGUI hoursText;
     public TextMeshProUGUI minutesText;
     public TextMeshProUGUI colonText;
+
+    [HideInInspector] public bool TimerEndBool = false;
 
     private int hours = 9;
     private int minutes = 0;
@@ -16,10 +20,21 @@ public class ClockSystem : MonoBehaviour
 
     private bool colonVisible = true;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         UpdateTimeDisplay();
-        StartClock();
     }
 
     public void StartClock()
@@ -85,6 +100,7 @@ public class ClockSystem : MonoBehaviour
 
     private void TimerEnd()
     {
-        Debug.Log("Timer has reached the end.");
+        //Debug.Log("Timer has reached the end.");
+        TimerEndBool = true;
     }
 }

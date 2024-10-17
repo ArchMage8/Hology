@@ -84,7 +84,7 @@ public class PaperManager : MonoBehaviour
 
     private void StartTimer()
     {
-        timerClock.StartClock();
+        ClockSystem.Instance.StartClock();
     }
 
     public void NextPaper(bool hoax)
@@ -128,6 +128,8 @@ public class PaperManager : MonoBehaviour
         yield return new WaitForSeconds(exitDelay);
 
         StartCoroutine(DisableCurrentPaper());
+
+        timerExpired = ClockSystem.Instance.TimerEndBool;
 
         if (timerExpired && completedPapers < papers.Length)
         {
