@@ -7,28 +7,46 @@ public class TutorialSystem : MonoBehaviour
     public GameObject tutorialEffect;     // Effect shown during tutorial
     public GameObject ToggleButton;
     public float delayBetweenObjects = 1.0f;  // Delay before moving to the next object
+    public bool OnAtStart = true;
 
     private int currentObjectIndex = 0;  // Track the current tutorial object
     private bool canProceed = false;     // Track if the player can proceed to the next tutorial object
     private bool Started = false;
 
 
-    void Start()
+    private void Awake()
     {
-        // Disable all tutorial objects at the start
-        foreach (GameObject obj in tutorialObjects)
+ 
+        if (!OnAtStart)
         {
-            obj.SetActive(false);
+            // Disable all tutorial objects at the start
+            foreach (GameObject obj in tutorialObjects)
+            {
+                obj.SetActive(false);
+            }
+
+            // Disable the tutorial effect at the start
+            tutorialEffect.SetActive(false);
         }
 
-        // Disable the tutorial effect at the start
-        tutorialEffect.SetActive(false);
+        else
+        {
+            StartTutorial();
+        }
     }
 
     public void StartTutorial()
     {
+
+        ToggleButton.SetActive(false);
+
+        GameStateHandler.instance.isResearching = true;
+        GameStateHandler.instance.isPrinting = true;
+        GameStateHandler.instance.isInspecting = true;
+
         if (tutorialObjects.Length > 0)
         {
+
             tutorialObjects[0].SetActive(true);  // Enable the first tutorial object
             tutorialEffect.SetActive(true);      // Enable the tutorial effect
             currentObjectIndex = 0;
@@ -36,20 +54,24 @@ public class TutorialSystem : MonoBehaviour
             StartCoroutine(DelayNextStep());
             Started = true;
         }
+        
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && canProceed && Started)
         {
+            Debug.Log("Test");
             ProceedToNextObject();
         }
     }
 
     private void ProceedToNextObject()
     {
-        tutorialObjects[currentObjectIndex].SetActive(false);  // Disable the current object
-        currentObjectIndex++;  // Move to the next object
+       
+            tutorialObjects[currentObjectIndex].SetActive(false);  // Disable the current object
+            currentObjectIndex++;  // Move to the next object
+        
 
         if (currentObjectIndex < tutorialObjects.Length)
         {
@@ -72,7 +94,11 @@ public class TutorialSystem : MonoBehaviour
     private void EndTutorial()
     {
         tutorialEffect.SetActive(false);  // Disable the tutorial effect
-        ToggleButton.SetActive(false);
+        ToggleButton.SetActive(true);
+
+        GameStateHandler.instance.isResearching = false;
+        GameStateHandler.instance.isPrinting = false;
+        GameStateHandler.instance.isInspecting = false;
 
         // Disable all tutorial objects
         foreach (GameObject obj in tutorialObjects)

@@ -24,12 +24,12 @@ public class PaperManager : MonoBehaviour
 
     public bool canNext = false;
     private bool waitingForContinue = false;  // Flag to check if we're waiting for player to continue
-
-    [Header("Clock")]
-    public TimerClock timerClock;  // Reference to the TimerClock script
+ 
+    //[Header("Clock")]
+    //public TimerClock timerClock;  // Reference to the TimerClock script
     [HideInInspector] public bool timerExpired = false;  // Flag for the timer expiration
     [HideInInspector] public bool Started = false;
-
+ 
     [Header("Audio")]
     public AudioClip PaperIN;
     public AudioClip PaperOUT;
@@ -62,7 +62,7 @@ public class PaperManager : MonoBehaviour
         }
 
         // Find the TimerClock script in the scene
-        timerClock = FindObjectOfType<TimerClock>();
+        //timerClock = FindObjectOfType<TimerClock>();
     }
 
     public void StartSystem()

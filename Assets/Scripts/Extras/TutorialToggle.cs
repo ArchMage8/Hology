@@ -8,7 +8,10 @@ public class TutorialToggle : MonoBehaviour
 
     private void OnMouseDown()
     {
-        tutorialSystem.StartTutorial();
-        this.gameObject.SetActive(false);
+        if (!GameStateHandler.instance.isInspecting || !GameStateHandler.instance.isResearching || !GameStateHandler.instance.isPrinting)
+        {
+            tutorialSystem.StartTutorial();
+            this.gameObject.SetActive(false);
+        }
     }
 }
