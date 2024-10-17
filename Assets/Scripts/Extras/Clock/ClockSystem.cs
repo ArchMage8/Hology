@@ -6,9 +6,16 @@ public class ClockSystem : MonoBehaviour
 {
     public static ClockSystem Instance { get; private set; }
 
+    [Header("Clock Stuffs")]
+
     public TextMeshProUGUI hoursText;
     public TextMeshProUGUI minutesText;
     public TextMeshProUGUI colonText;
+
+    [Space(10)]
+    [Header("Audio")]
+    public SFXManager_Exception AlarmSoundPlayer;
+    public AudioClip ClockEndSound;
 
     [HideInInspector] public bool TimerEndBool = false;
 
@@ -101,6 +108,7 @@ public class ClockSystem : MonoBehaviour
     private void TimerEnd()
     {
         //Debug.Log("Timer has reached the end.");
+        AlarmSoundPlayer.PlaySound(ClockEndSound);
         TimerEndBool = true;
     }
 }
