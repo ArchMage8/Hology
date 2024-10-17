@@ -4366,7 +4366,7 @@ Animator:
   m_GameObject: {fileID: 841436590}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6fc5d1da64274444ca440c364c61c975, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9a363c56d9fc7db43809d092ebd35a11, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9782,6 +9782,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1001 &1747839230
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306732, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921601722817306735, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
+      propertyPath: m_Name
+      value: NPCStuff
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60c4b34f55b468d438aeccd90b136ca4, type: 3}
 --- !u!1 &1756924136
 GameObject:
   m_ObjectHideFlags: 0
@@ -10426,7 +10483,7 @@ Animator:
   m_GameObject: {fileID: 1867091718}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6fc5d1da64274444ca440c364c61c975, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9a363c56d9fc7db43809d092ebd35a11, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
