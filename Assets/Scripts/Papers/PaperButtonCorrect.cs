@@ -19,7 +19,7 @@ public class PaperButtonCorrect : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (PaperManager.Instance.canNext)
+        if (PaperManager.Instance.canNext && !GameStateHandler.instance.isPrinting)
         {
             StartCoroutine(AnimationWait());
         }

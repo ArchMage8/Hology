@@ -5,6 +5,7 @@ using UnityEngine;
 public class Guide_ColliderHandler : MonoBehaviour
 {
     private PolygonCollider2D BookCollider;
+    public bool exception = true;
 
     private void Start()
     {

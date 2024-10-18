@@ -11,6 +11,10 @@ public class DialogueSystem : MonoBehaviour
     public float NextDelay = 1.0f;  // Delay before moving to the next dialogue
     public int TargetScene;
 
+    [Space(10)]
+    [Header("Fadeout")]
+    public Animator FadeAnimator;
+
     private int currentDialogueIndex = 0;  // Track current dialogue
     private bool isTyping = false;  // Track if typing is in progress
     private bool canProceed = false;  // Track if player can proceed to next dialogue
@@ -102,6 +106,7 @@ public class DialogueSystem : MonoBehaviour
     private void EndDialogue()
     {
         Debug.Log("End of dialogue array.");
+        FadeAnimator.SetTrigger("EndOfScene");
         SceneManager.LoadScene(TargetScene);
     }
 }

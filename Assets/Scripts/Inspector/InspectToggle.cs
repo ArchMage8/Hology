@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.XR.Interaction;
 
 public class InspectToggle : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class InspectToggle : MonoBehaviour
     public SFXManager SFXManager;
 
     private bool canToggle = true;
+    public bool IsVisible = false;
 
     private void Start()
     {
@@ -31,6 +33,7 @@ public class InspectToggle : MonoBehaviour
 
             if (inspectorManager.isEnabled)
             {
+                IsVisible = false;
                 inspectorManager.DisableInspect();
                 GameStateHandler.instance.isInspecting = false;
                 inspectorSystem.canCheck = false;
@@ -41,6 +44,7 @@ public class InspectToggle : MonoBehaviour
             }
             else
             {
+                IsVisible = true;
                 inspectorSystem.ResetDisplay();
                 inspectorManager.ToggleInspect();
                 GameStateHandler.instance.isInspecting = true;
@@ -62,7 +66,7 @@ public class InspectToggle : MonoBehaviour
 
     public void ExternalResponse()
     {
-        if (inspectorManager.isEnabled)
+        if (IsVisible)
         {
             inspectorManager.DisableInspect();
             GameStateHandler.instance.isInspecting = false;
@@ -74,14 +78,7 @@ public class InspectToggle : MonoBehaviour
         }
         else
         {
-            inspectorSystem.ResetDisplay();
-            inspectorManager.ToggleInspect();
-            GameStateHandler.instance.isInspecting = true;
-            inspectorSystem.gameObject.SetActive(true);
-            inspectorSystem.canCheck = true;
-            StartCoroutine(bugDelay());
-            SFXManager.PlaySound(ObjectIn);
-            animator.SetTrigger("Open");
+            return;
         }
     }
 }

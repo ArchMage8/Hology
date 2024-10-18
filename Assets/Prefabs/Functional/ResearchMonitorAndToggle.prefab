@@ -1,5 +1,92 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4454795364664781500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7743199082393520532}
+  - component: {fileID: 3550563455031056371}
+  - component: {fileID: 1811910692065609539}
+  m_Layer: 0
+  m_Name: Guidebook_Ignore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7743199082393520532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454795364664781500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.88, y: -3.23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8935553472460666524}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3550563455031056371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454795364664781500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc21fd607aaf3a46b6be7b7feeed3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookCollider: {fileID: 0}
+--- !u!60 &1811910692065609539
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454795364664781500}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -1.5308604, y: 0.9987836}
+      - {x: -1.5885735, y: -2.479562}
+      - {x: -1.5126562, y: -2.5126767}
+      - {x: 1.4430523, y: -2.5481482}
+      - {x: 0.14265728, y: -2.3284688}
+      - {x: 1.0994968, y: -2.1155162}
+      - {x: -1.1387525, y: -2.1092372}
+      - {x: -1.1359196, y: -1.4318967}
+      - {x: 1.1209478, y: -1.4412484}
+      - {x: 1.1259546, y: -2.07963}
+      - {x: 1.4692459, y: -2.5506659}
+      - {x: 1.6044569, y: -2.4279013}
+      - {x: 1.6093088, y: -1.0083385}
+      - {x: 1.6191101, y: 0.22621918}
+      - {x: 1.6179113, y: 0.99878377}
 --- !u!1 &8551647207952851698
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +117,7 @@ Transform:
   m_Children:
   - {fileID: 8729035145433112142}
   - {fileID: 8729035145700808900}
+  - {fileID: 7743199082393520532}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -319,7 +407,8 @@ GameObject:
   - component: {fileID: 8729035144557637493}
   - component: {fileID: 8729035144557637492}
   - component: {fileID: 8729035144557637495}
-  - component: {fileID: 8729035144557637494}
+  - component: {fileID: 261494847471875387}
+  - component: {fileID: 1984455866092665337}
   m_Layer: 0
   m_Name: Butt
   m_TagString: Untagged
@@ -410,8 +499,8 @@ MonoBehaviour:
   hoverSprite: {fileID: 21300000, guid: e90745ff92227b742b3dd3110c1a65b0, type: 3}
   ButtonSound: {fileID: 8300000, guid: 333b08e45f9c24441a5a4eb79a95ace1, type: 3}
   digit: 2
---- !u!61 &8729035144557637494
-BoxCollider2D:
+--- !u!60 &261494847471875387
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -433,9 +522,27 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.43}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.275, y: 0.21499999}
+      - {x: -0.275, y: -0.16499999}
+      - {x: -0.235, y: -0.21499999}
+      - {x: 0.225, y: -0.21499999}
+      - {x: 0.275, y: -0.155}
+      - {x: 0.275, y: 0.21499999}
+--- !u!114 &1984455866092665337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729035144557637498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc21fd607aaf3a46b6be7b7feeed3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookCollider: {fileID: 0}
 --- !u!1 &8729035145171137420
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +818,8 @@ GameObject:
   - component: {fileID: 8729035145578014255}
   - component: {fileID: 8729035145578014254}
   - component: {fileID: 8729035145578014249}
-  - component: {fileID: 8729035145578014248}
+  - component: {fileID: 4782848249188297854}
+  - component: {fileID: 6501303319194830115}
   m_Layer: 0
   m_Name: Butt (2)
   m_TagString: Untagged
@@ -802,8 +910,8 @@ MonoBehaviour:
   hoverSprite: {fileID: 21300000, guid: e90745ff92227b742b3dd3110c1a65b0, type: 3}
   ButtonSound: {fileID: 8300000, guid: 333b08e45f9c24441a5a4eb79a95ace1, type: 3}
   digit: 6
---- !u!61 &8729035145578014248
-BoxCollider2D:
+--- !u!60 &4782848249188297854
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -825,9 +933,27 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.43}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.275, y: 0.21499999}
+      - {x: -0.275, y: -0.16499999}
+      - {x: -0.235, y: -0.21499999}
+      - {x: 0.225, y: -0.21499999}
+      - {x: 0.275, y: -0.155}
+      - {x: 0.275, y: 0.21499999}
+--- !u!114 &6501303319194830115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729035145578014252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc21fd607aaf3a46b6be7b7feeed3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookCollider: {fileID: 0}
 --- !u!1 &8729035145700808901
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +1120,8 @@ GameObject:
   - component: {fileID: 8729035145717212595}
   - component: {fileID: 8729035145717212594}
   - component: {fileID: 8729035145717212589}
-  - component: {fileID: 8729035145717212588}
+  - component: {fileID: 4556274797598466648}
+  - component: {fileID: 9002469458787797003}
   m_Layer: 0
   m_Name: Butt (1)
   m_TagString: Untagged
@@ -1085,8 +1212,8 @@ MonoBehaviour:
   hoverSprite: {fileID: 21300000, guid: e90745ff92227b742b3dd3110c1a65b0, type: 3}
   ButtonSound: {fileID: 8300000, guid: 333b08e45f9c24441a5a4eb79a95ace1, type: 3}
   digit: 4
---- !u!61 &8729035145717212588
-BoxCollider2D:
+--- !u!60 &4556274797598466648
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1108,6 +1235,24 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.43}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.275, y: 0.21499999}
+      - {x: -0.275, y: -0.16499999}
+      - {x: -0.235, y: -0.21499999}
+      - {x: 0.225, y: -0.21499999}
+      - {x: 0.275, y: -0.155}
+      - {x: 0.275, y: 0.21499999}
+--- !u!114 &9002469458787797003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729035145717212592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc21fd607aaf3a46b6be7b7feeed3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookCollider: {fileID: 0}

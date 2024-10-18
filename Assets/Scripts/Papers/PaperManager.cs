@@ -27,7 +27,7 @@ public class PaperManager : MonoBehaviour
  
     //[Header("Clock")]
     //public TimerClock timerClock;  // Reference to the TimerClock script
-    [HideInInspector] public bool timerExpired = false;  // Flag for the timer expiration
+    public bool timerExpired = false;  // Flag for the timer expiration
     [HideInInspector] public bool Started = false;
  
     [Header("Audio")]
@@ -123,6 +123,8 @@ public class PaperManager : MonoBehaviour
     private IEnumerator HandleNextPaper(PaperProperties currentPaperProps, bool hoax)
     {
         SFXManager.PlaySound(PaperOUT);
+        StartCoroutine(DeletingResearchPaper());
+
         GameStateHandler.instance.isResearching = false;
         //canNext = false;
         yield return new WaitForSeconds(exitDelay);
@@ -202,7 +204,7 @@ public class PaperManager : MonoBehaviour
 
     private IEnumerator DisableCurrentPaper()
     {
-        StartCoroutine(DeletingResearchPaper());
+        
         GameObject Temp = GetActivePaper();
         
         Animator animator = Temp.GetComponent<Animator>();

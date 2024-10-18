@@ -14,6 +14,11 @@ public class InGameSceneNavigator : MonoBehaviour
     public Animator FadeAnimator;
     public float completeDelay = 3f;
 
+    [Space(10)]
+    [Header("Audio")]
+    public AudioClip PrinterSound;
+    public SFXManager_Exception PrinterSoundPlayer;
+
     private void Awake()
     {
         if (Instance == null)
@@ -49,6 +54,7 @@ public class InGameSceneNavigator : MonoBehaviour
     private IEnumerator PrintFinish()
     {
         completePrint.SetActive(true);
+        PrinterSoundPlayer.PlaySound(PrinterSound);
         yield return new WaitForSeconds(4f);
         StartCoroutine(LoadTargetScene(LevelSelectIndex));
     }
