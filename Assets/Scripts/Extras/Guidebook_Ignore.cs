@@ -4,11 +4,11 @@ public class Guidebook_Ignore : MonoBehaviour
 {
     public GameObject bookCollider;
     private PolygonCollider2D polygonCollider;
-    private BoxCollider2D boxCollider;
+    private PolygonCollider2D selfCollider;
 
     private void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
+        selfCollider = GetComponent<PolygonCollider2D>();
         polygonCollider = bookCollider.GetComponent<PolygonCollider2D>();
     }
 
@@ -16,7 +16,7 @@ public class Guidebook_Ignore : MonoBehaviour
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (boxCollider.bounds.Contains(mousePosition))
+        if (selfCollider.bounds.Contains(mousePosition))
         {
             polygonCollider.enabled = false;
         }

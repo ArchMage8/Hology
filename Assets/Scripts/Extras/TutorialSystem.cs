@@ -55,11 +55,12 @@ public class TutorialSystem : MonoBehaviour
     {
        
             tutorialObjects[currentObjectIndex].SetActive(false);  // Disable the current object
-            currentObjectIndex++;  // Move to the next object
+            
         
 
-        if (currentObjectIndex < tutorialObjects.Length)
+        if (currentObjectIndex < tutorialObjects.Length - 1)
         {
+            currentObjectIndex++;  // Move to the next object
             tutorialObjects[currentObjectIndex].SetActive(true);  // Enable the next object
             canProceed = false;
             StartCoroutine(DelayNextStep());
@@ -113,6 +114,7 @@ public class TutorialSystem : MonoBehaviour
 
         else
         {
+            currentObjectIndex = 0;
             StartTutorial();
         }
     }

@@ -320,7 +320,7 @@ MonoBehaviour:
   minutesText: {fileID: 1554563626423838410}
   colonText: {fileID: 1554563625612842837}
   AlarmSoundPlayer: {fileID: 0}
-  ClockEndSound: {fileID: 0}
+  ClockEndSound: {fileID: 8300000, guid: a70149689cd933a409b170321ae3c667, type: 3}
   TimerEndBool: 0
 --- !u!1 &1554563626423838412
 GameObject:

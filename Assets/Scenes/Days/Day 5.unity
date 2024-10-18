@@ -1591,7 +1591,7 @@ GameObject:
   - component: {fileID: 200530944}
   - component: {fileID: 200530947}
   - component: {fileID: 200530946}
-  - component: {fileID: 200530945}
+  - component: {fileID: 200530948}
   m_Layer: 0
   m_Name: Fax
   m_TagString: Untagged
@@ -1617,19 +1617,6 @@ Transform:
   m_Father: {fileID: 1555194591}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &200530945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200530943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e63bbc63e5f83844bd1cb12dfb9f980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParentObject: {fileID: 1555194590}
 --- !u!61 &200530946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1708,6 +1695,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &200530948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200530943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b1bdea94615a46b4be0b8f36baba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1555194592}
+  PaperIn: {fileID: 8300000, guid: 2f240a291843d65459eaf608d00d4ff1, type: 3}
+  PaperOut: {fileID: 8300000, guid: 88d2fe9df3c3ce94f9760ff6016c0c30, type: 3}
+  SFXManager: {fileID: 46238711}
 --- !u!1001 &215882222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2211,6 +2214,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8733817933920771154, guid: 60f23ecd91f6dea42922e3a42b8e030c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733817933920771155, guid: 60f23ecd91f6dea42922e3a42b8e030c, type: 3}
+      propertyPath: OnAtStart
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8733817933920771156, guid: 60f23ecd91f6dea42922e3a42b8e030c, type: 3}
@@ -3293,7 +3300,7 @@ GameObject:
   - component: {fileID: 480673386}
   - component: {fileID: 480673389}
   - component: {fileID: 480673388}
-  - component: {fileID: 480673387}
+  - component: {fileID: 480673390}
   m_Layer: 0
   m_Name: Fax
   m_TagString: Untagged
@@ -3319,19 +3326,6 @@ Transform:
   m_Father: {fileID: 118229799}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &480673387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480673385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e63bbc63e5f83844bd1cb12dfb9f980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParentObject: {fileID: 118229798}
 --- !u!61 &480673388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3410,6 +3404,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &480673390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480673385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b1bdea94615a46b4be0b8f36baba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 118229800}
+  PaperIn: {fileID: 8300000, guid: 2f240a291843d65459eaf608d00d4ff1, type: 3}
+  PaperOut: {fileID: 8300000, guid: 88d2fe9df3c3ce94f9760ff6016c0c30, type: 3}
+  SFXManager: {fileID: 46238711}
 --- !u!1 &487950809
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,7 +6075,7 @@ GameObject:
   - component: {fileID: 932879593}
   - component: {fileID: 932879596}
   - component: {fileID: 932879595}
-  - component: {fileID: 932879594}
+  - component: {fileID: 932879597}
   m_Layer: 0
   m_Name: Fax
   m_TagString: Untagged
@@ -6091,19 +6101,6 @@ Transform:
   m_Father: {fileID: 1867091719}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &932879594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932879592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e63bbc63e5f83844bd1cb12dfb9f980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParentObject: {fileID: 1867091718}
 --- !u!61 &932879595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6182,6 +6179,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &932879597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932879592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b1bdea94615a46b4be0b8f36baba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1867091720}
+  PaperIn: {fileID: 8300000, guid: 2f240a291843d65459eaf608d00d4ff1, type: 3}
+  PaperOut: {fileID: 8300000, guid: 88d2fe9df3c3ce94f9760ff6016c0c30, type: 3}
+  SFXManager: {fileID: 46238711}
 --- !u!1 &937158334
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,7 +8021,7 @@ GameObject:
   - component: {fileID: 1217486738}
   - component: {fileID: 1217486741}
   - component: {fileID: 1217486740}
-  - component: {fileID: 1217486739}
+  - component: {fileID: 1217486742}
   m_Layer: 0
   m_Name: Fax
   m_TagString: Untagged
@@ -8034,19 +8047,6 @@ Transform:
   m_Father: {fileID: 841436591}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1217486739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217486737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e63bbc63e5f83844bd1cb12dfb9f980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParentObject: {fileID: 841436590}
 --- !u!61 &1217486740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8125,6 +8125,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1217486742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217486737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b1bdea94615a46b4be0b8f36baba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 841436592}
+  PaperIn: {fileID: 8300000, guid: 2f240a291843d65459eaf608d00d4ff1, type: 3}
+  PaperOut: {fileID: 8300000, guid: 88d2fe9df3c3ce94f9760ff6016c0c30, type: 3}
+  SFXManager: {fileID: 46238711}
 --- !u!1 &1221614344
 GameObject:
   m_ObjectHideFlags: 0
@@ -10968,7 +10984,7 @@ GameObject:
   - component: {fileID: 1735901902}
   - component: {fileID: 1735901905}
   - component: {fileID: 1735901904}
-  - component: {fileID: 1735901903}
+  - component: {fileID: 1735901906}
   m_Layer: 0
   m_Name: Fax
   m_TagString: Untagged
@@ -10994,19 +11010,6 @@ Transform:
   m_Father: {fileID: 593052665}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1735901903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735901901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e63bbc63e5f83844bd1cb12dfb9f980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParentObject: {fileID: 593052664}
 --- !u!61 &1735901904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11085,6 +11088,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1735901906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735901901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446b1bdea94615a46b4be0b8f36baba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 593052666}
+  PaperIn: {fileID: 8300000, guid: 2f240a291843d65459eaf608d00d4ff1, type: 3}
+  PaperOut: {fileID: 8300000, guid: 88d2fe9df3c3ce94f9760ff6016c0c30, type: 3}
+  SFXManager: {fileID: 46238711}
 --- !u!1 &1738337720
 GameObject:
   m_ObjectHideFlags: 0
