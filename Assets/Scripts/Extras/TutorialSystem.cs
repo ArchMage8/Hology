@@ -14,25 +14,9 @@ public class TutorialSystem : MonoBehaviour
     private bool Started = false;
 
 
-    private void Awake()
+    private void OnEnable()
     {
- 
-        if (!OnAtStart)
-        {
-            // Disable all tutorial objects at the start
-            foreach (GameObject obj in tutorialObjects)
-            {
-                obj.SetActive(false);
-            }
-
-            // Disable the tutorial effect at the start
-            tutorialEffect.SetActive(false);
-        }
-
-        else
-        {
-            StartTutorial();
-        }
+       StartCoroutine(StartLogic());
     }
 
     public void StartTutorial()
@@ -40,9 +24,10 @@ public class TutorialSystem : MonoBehaviour
 
         ToggleButton.SetActive(false);
 
-        GameStateHandler.instance.isResearching = true;
+        
         GameStateHandler.instance.isPrinting = true;
         GameStateHandler.instance.isInspecting = true;
+        GameStateHandler.instance.isResearching = true;
 
         if (tutorialObjects.Length > 0)
         {
@@ -108,5 +93,27 @@ public class TutorialSystem : MonoBehaviour
 
         Debug.Log("Tutorial completed.");
         // You can add additional logic here for when the tutorial ends
+    }
+
+    private IEnumerator StartLogic()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        if (!OnAtStart)
+        {
+            // Disable all tutorial objects at the start
+            foreach (GameObject obj in tutorialObjects)
+            {
+                obj.SetActive(false);
+            }
+
+            // Disable the tutorial effect at the start
+            tutorialEffect.SetActive(false);
+        }
+
+        else
+        {
+            StartTutorial();
+        }
     }
 }

@@ -30,13 +30,13 @@ public class InGameSceneNavigator : MonoBehaviour
     // Function to load the scene for exceeding the mistake limit
     public void ExceedMistakeLimit()
     {
-        LoadTargetScene(MistakeLimitIndex);
+        StartCoroutine(LoadTargetScene(MistakeLimitIndex));
     }
 
     // Function to load the scene for exceeding the time limit
     public void ExceedTimeLimit()
     {
-        LoadTargetScene(TimeLimitIndex);
+        StartCoroutine(LoadTargetScene(TimeLimitIndex));
     }
 
     // Function to finish level
@@ -50,13 +50,14 @@ public class InGameSceneNavigator : MonoBehaviour
     {
         completePrint.SetActive(true);
         yield return new WaitForSeconds(4f);
-        LoadTargetScene(LevelSelectIndex);
+        StartCoroutine(LoadTargetScene(LevelSelectIndex));
     }
 
     private IEnumerator LoadTargetScene(int Target)
     {
         FadeAnimator.SetTrigger("EndScene");
         yield return new WaitForSeconds(completeDelay);
+        Debug.Log("End Level");
         SceneManager.LoadScene(Target);
     }
 }

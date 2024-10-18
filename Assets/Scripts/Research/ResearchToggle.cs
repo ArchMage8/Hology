@@ -21,10 +21,11 @@ public class ResearchToggle : MonoBehaviour
     {
         if (!GameStateHandler.instance.isPrinting)
         {
+            ResearchMonitor.SetActive(true);
             ResearchMonitor.GetComponent<ResearchCode>().enabled = true;
             inspectToggle.ExternalResponse();
             ResearchParent.SetActive(true);
-            GameStateHandler.instance.isResearching = true;
+            //GameStateHandler.instance.isResearching = true;
             this.gameObject.SetActive(false);
 
             SFXManager.instance.PlaySound(TrayIN);

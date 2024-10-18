@@ -26,7 +26,7 @@ public class InspectorSystem : MonoBehaviour
     [HideInInspector] public bool canCheck = false;
     private InspectComponent currentInspectComponent;
 
-    void Start()
+    void Awake()
     {
         instruction1.SetActive(true);
         instruction2.SetActive(false);
