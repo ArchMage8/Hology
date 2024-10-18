@@ -19,6 +19,7 @@ public class PaperErrorNext : MonoBehaviour
     private IEnumerator AnimationWait()
     {
         yield return new WaitForSeconds(1f);
+        GameStateHandler.instance.isPrinting = false;
         PaperManager.Instance.ContinueAfterError();
         ParentObject.SetActive(false);
     }

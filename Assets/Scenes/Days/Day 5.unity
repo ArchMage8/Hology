@@ -537,7 +537,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -964,6 +964,8 @@ MonoBehaviour:
   completePrint: {fileID: 1473658891}
   FadeAnimator: {fileID: 1692314239}
   completeDelay: 3
+  PrinterSound: {fileID: 0}
+  PrinterSoundPlayer: {fileID: 0}
 --- !u!1 &116040097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,6 +3535,7 @@ MonoBehaviour:
   ResearchIcon: {fileID: 117438254}
   ResearchButton: {fileID: 1969877781}
   canCheck: 1
+  AlreadyPrint: 0
 --- !u!4 &498114006
 Transform:
   m_ObjectHideFlags: 0
@@ -3713,7 +3716,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 79e79f7960ef8a940bac408fa73c56e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3835,6 +3838,14 @@ PrefabInstance:
       propertyPath: paperManager
       value: 
       objectReference: {fileID: 1056076441}
+    - target: {fileID: 8729035145433112142, guid: c61dfcd4435c93b47a6d76751b547acf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.323219
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729035145433112142, guid: c61dfcd4435c93b47a6d76751b547acf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.296033
+      objectReference: {fileID: 0}
     - target: {fileID: 8729035145433112143, guid: c61dfcd4435c93b47a6d76751b547acf, type: 3}
       propertyPath: SFXManager
       value: 
@@ -4581,7 +4592,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7908,7 +7919,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0

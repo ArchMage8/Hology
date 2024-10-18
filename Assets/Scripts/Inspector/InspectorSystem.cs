@@ -3,6 +3,8 @@ using System.Collections;
 
 public class InspectorSystem : MonoBehaviour
 {
+    public static InspectorSystem Instance { get; private set; }
+
     [Header("Instructions")]
     public GameObject instruction1;
     public GameObject instruction2;
@@ -24,10 +26,13 @@ public class InspectorSystem : MonoBehaviour
 
     private bool isInCheckMode = false;
     [HideInInspector] public bool canCheck = false;
+    [HideInInspector] public bool AlreadyPrint = false;
     private InspectComponent currentInspectComponent;
 
     void Awake()
     {
+        Instance = this;
+
         instruction1.SetActive(true);
         instruction2.SetActive(false);
         noConnect.SetActive(false);
@@ -75,6 +80,7 @@ public class InspectorSystem : MonoBehaviour
         instruction2.SetActive(false);
         
 
+ 
         if (clickedObject.CompareTag("PaperComponent") || clickedObject.CompareTag("GuidePage"))
         {
             canCheck = false;
@@ -82,14 +88,22 @@ public class InspectorSystem : MonoBehaviour
             {
                 //Research Excepetion
                 StartCoroutine(DisplayTemporary(ResearchIcon));
-                ResearchButton.SetActive(true);
+                if (!AlreadyPrint)
+                {
+                    ResearchButton.SetActive(true);
+                    AlreadyPrint = true;
+                }
             }
 
             else if (clickedObject == IndependetPublisherPage && currentInspectComponent.Target_Page == IndependetPublisherPage)
             {
                 //Research Excepetion
                 StartCoroutine(DisplayTemporary(ResearchIcon));
-                ResearchButton.SetActive(true);
+                if (!AlreadyPrint)
+                {
+                    ResearchButton.SetActive(true);
+                    AlreadyPrint = true;
+                }
             }
 
 

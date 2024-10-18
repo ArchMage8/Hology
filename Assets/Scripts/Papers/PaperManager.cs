@@ -24,6 +24,8 @@ public class PaperManager : MonoBehaviour
 
     public bool canNext = false;
     private bool waitingForContinue = false;  // Flag to check if we're waiting for player to continue
+    
+    
  
     //[Header("Clock")]
     //public TimerClock timerClock;  // Reference to the TimerClock script
@@ -93,6 +95,7 @@ public class PaperManager : MonoBehaviour
 
         PaperProperties currentPaperProps = papers[currentPaperIndex].GetComponent<PaperProperties>();
         canNext = false;
+        StartCoroutine(DeletingResearchPaper());
 
         if (currentPaperProps.Hoax != hoax)
         {
@@ -123,7 +126,7 @@ public class PaperManager : MonoBehaviour
     private IEnumerator HandleNextPaper(PaperProperties currentPaperProps, bool hoax)
     {
         SFXManager.PlaySound(PaperOUT);
-        StartCoroutine(DeletingResearchPaper());
+        
 
         GameStateHandler.instance.isResearching = false;
         //canNext = false;
@@ -192,6 +195,7 @@ public class PaperManager : MonoBehaviour
 
     private IEnumerator DeletingResearchPaper()
     {
+        InspectorSystem.Instance.AlreadyPrint = false;
         GameStateHandler.instance.isPrinting = false;
         GameObject Temp = GetActivePaper();
 
@@ -217,6 +221,7 @@ public class PaperManager : MonoBehaviour
 
     private IEnumerator printError(PaperProperties currProps)
     {
+        GameStateHandler.instance.isPrinting = true;
         DisableCurrentPaper();
         yield return new WaitForSeconds(1.5f);
         currProps.ErrorPaper.SetActive(true);

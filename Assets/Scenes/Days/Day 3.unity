@@ -252,7 +252,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1236,7 +1236,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0f75f97d0da7e77438b142c36e024db4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2247,6 +2247,7 @@ MonoBehaviour:
   ResearchIcon: {fileID: 1302997790}
   ResearchButton: {fileID: 227119746}
   canCheck: 1
+  AlreadyPrint: 0
 --- !u!4 &498114006
 Transform:
   m_ObjectHideFlags: 0
@@ -3023,7 +3024,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6105,7 +6106,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9724,6 +9725,8 @@ MonoBehaviour:
   completePrint: {fileID: 904245944}
   FadeAnimator: {fileID: 801767750}
   completeDelay: 3
+  PrinterSound: {fileID: 0}
+  PrinterSoundPlayer: {fileID: 0}
 --- !u!1 &1930900735
 GameObject:
   m_ObjectHideFlags: 0

@@ -298,6 +298,7 @@ MonoBehaviour:
   typingSpeed: 0.05
   NextDelay: 1
   TargetScene: 9
+  FadeAnimator: {fileID: 0}
 --- !u!4 &388003222
 Transform:
   m_ObjectHideFlags: 0
@@ -912,7 +913,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0f75f97d0da7e77438b142c36e024db4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

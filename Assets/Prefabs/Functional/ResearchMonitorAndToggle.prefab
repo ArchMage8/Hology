@@ -690,6 +690,7 @@ GameObject:
   - component: {fileID: 8729035145433112143}
   - component: {fileID: 8729035145433112140}
   - component: {fileID: 8729035145433112137}
+  - component: {fileID: 3251137430852167927}
   m_Layer: 0
   m_Name: ResearchToggle
   m_TagString: Untagged
@@ -807,6 +808,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3251137430852167927
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729035145433112141}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c0d62db5f4875f41ac37c56f3e1acdc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8729035145578014252
 GameObject:
   m_ObjectHideFlags: 0
