@@ -23,11 +23,17 @@ public class InspectorSystem : MonoBehaviour
     public GameObject ResearchIcon;
     public GameObject ResearchButton;
 
+    [Header("Audio")]
+    public AudioClip clickSound;
+
 
     private bool isInCheckMode = false;
     [HideInInspector] public bool canCheck = false;
     [HideInInspector] public bool AlreadyPrint = false;
     private InspectComponent currentInspectComponent;
+    private GameObject Holder;
+
+    //private bool isDisplaying;
 
     void Awake()
     {
@@ -39,7 +45,7 @@ public class InspectorSystem : MonoBehaviour
         positiveImage.SetActive(false);
         negativeImage.SetActive(false);
         ResearchIcon.SetActive(false);
-        ResearchButton.SetActive(false);
+        //ResearchButton.SetActive(false);
     }
 
     void Update()
@@ -84,9 +90,10 @@ public class InspectorSystem : MonoBehaviour
         if (clickedObject.CompareTag("PaperComponent") || clickedObject.CompareTag("GuidePage"))
         {
             canCheck = false;
-            if(clickedObject == GuideResearchPage && currentInspectComponent.Target_Page == GuideResearchPage)
+            //Research Excepetion for Feature Page
+            if (clickedObject == GuideResearchPage && currentInspectComponent.Target_Page == GuideResearchPage)
             {
-                //Research Excepetion
+                StopCoroutine(DisplayTemporary(Holder));
                 StartCoroutine(DisplayTemporary(ResearchIcon));
                 if (!AlreadyPrint)
                 {
@@ -94,10 +101,11 @@ public class InspectorSystem : MonoBehaviour
                     AlreadyPrint = true;
                 }
             }
-
+            //Research Excepetion for Vague Pub Page
             else if (clickedObject == IndependetPublisherPage && currentInspectComponent.Target_Page == IndependetPublisherPage)
             {
                 //Research Excepetion
+                StopCoroutine(DisplayTemporary(Holder));
                 StartCoroutine(DisplayTemporary(ResearchIcon));
                 if (!AlreadyPrint)
                 {
@@ -106,20 +114,23 @@ public class InspectorSystem : MonoBehaviour
                 }
             }
 
-
+            //Normal
             else if (clickedObject == currentInspectComponent.Target_Page)
             {
                 if (currentInspectComponent.positiveResponse)
                 {
+                    StopCoroutine(DisplayTemporary(Holder));
                     StartCoroutine(DisplayTemporary(positiveImage));
                 }
                 else
                 {
+                    StopCoroutine(DisplayTemporary(Holder));
                     StartCoroutine(DisplayTemporary(negativeImage));
                 }
             }
             else
             {
+                StopCoroutine(DisplayTemporary(Holder));
                 StartCoroutine(DisplayTemporary(noConnect));
             }
         }
@@ -127,11 +138,14 @@ public class InspectorSystem : MonoBehaviour
 
     IEnumerator DisplayTemporary(GameObject obj)
     {
-        obj.SetActive(true);
-        yield return new WaitForSeconds(displayDuration);
-        obj.SetActive(false);
-        canCheck = true;
-        instruction1.SetActive(true);
+        if (obj != null)
+        {
+            obj.SetActive(true);
+            yield return new WaitForSeconds(displayDuration);
+            obj.SetActive(false);
+            canCheck = true;
+            instruction1.SetActive(true);
+        }
     }
 
     public void ResetDisplay()
@@ -142,6 +156,6 @@ public class InspectorSystem : MonoBehaviour
         positiveImage.SetActive(false);
         negativeImage.SetActive(false);
         ResearchIcon.SetActive(false);
-        ResearchButton.SetActive(false);
+        //ResearchButton.SetActive(false);
     }
 }

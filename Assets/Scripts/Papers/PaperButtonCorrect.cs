@@ -5,8 +5,8 @@ public class PaperButtonCorrect : MonoBehaviour
 {
     public float AnimationDelay;
     private Animator animator;
-
     private Animator PaperAnimator;
+    private bool CanPress = true;
 
     [Header("Audio")]
     public AudioClip ButtonPress;
@@ -19,28 +19,38 @@ public class PaperButtonCorrect : MonoBehaviour
 
     private void OnMouseDown()
     {
+
+       
         if (PaperManager.Instance.canNext && !GameStateHandler.instance.isPrinting)
         {
             StartCoroutine(AnimationWait());
         }
     }
 
-        private IEnumerator AnimationWait() 
+    private IEnumerator AnimationWait()
     {
-        animator.SetTrigger("Press");
-        if (PaperManager.Instance.Started)
+        if (CanPress)
         {
-            Debug.Log("Banana");
-            PaperAnimator = PaperManager.Instance.GetActivePaper().GetComponent<Animator>();
-            PaperAnimator.SetTrigger("Close");
+            CanPress = false;
+            animator.SetTrigger("Press");
             SFXManager.PlaySound(ButtonPress);
-            yield return new WaitForSeconds(AnimationDelay);
-            PaperManager.Instance.NextPaper(false);
-        }
 
-        else
-        {
-            yield return null;
+            if (PaperManager.Instance.Started == true)
+            {
+
+                PaperAnimator = PaperManager.Instance.GetActivePaper().GetComponent<Animator>();
+                PaperAnimator.SetTrigger("Close");
+                //SFXManager.PlaySound(ButtonPress);
+                yield return new WaitForSeconds(AnimationDelay);
+                CanPress = true;
+                PaperManager.Instance.NextPaper(false);
+            }
+            else
+            {
+                yield return new WaitForSeconds(AnimationDelay);
+                CanPress = true;
+                yield return null;
+            }
         }
     }
 }

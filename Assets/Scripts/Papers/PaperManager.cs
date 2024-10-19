@@ -95,6 +95,7 @@ public class PaperManager : MonoBehaviour
 
         PaperProperties currentPaperProps = papers[currentPaperIndex].GetComponent<PaperProperties>();
         canNext = false;
+        InspectorSystem.Instance.ResearchButton.SetActive(false);
         StartCoroutine(DeletingResearchPaper());
 
         if (currentPaperProps.Hoax != hoax)

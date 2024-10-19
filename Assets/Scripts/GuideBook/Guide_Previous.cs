@@ -3,6 +3,8 @@ using UnityEngine;
 public class Guide_Previous : MonoBehaviour
 {
     public Guide_Main guideMain;
+    [Header("Audio")]
+    public AudioClip PageSound;
 
     void OnMouseDown()
     {
@@ -11,6 +13,7 @@ public class Guide_Previous : MonoBehaviour
         {
             
             guideMain.LoadPrevious();
+            SFXManager.instance.PlaySound(PageSound);
         }
     }
 }

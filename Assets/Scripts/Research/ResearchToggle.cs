@@ -14,7 +14,7 @@ public class ResearchToggle : MonoBehaviour
 
     private void Awake()
     {
-        ResearchParent.SetActive(false);
+        //ResearchParent.SetActive(false);
     }
 
     private void OnMouseDown()
