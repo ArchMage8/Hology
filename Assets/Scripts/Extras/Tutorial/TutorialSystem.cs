@@ -21,23 +21,25 @@ public class TutorialSystem : MonoBehaviour
 
     public void StartTutorial()
     {
-
-        ToggleButton.SetActive(false);
-
-        
-        GameStateHandler.instance.isPrinting = true;
-        GameStateHandler.instance.isInspecting = true;
-        GameStateHandler.instance.isResearching = true;
-
-        if (tutorialObjects.Length > 0)
+        if (!Started)
         {
+            ToggleButton.SetActive(false);
 
-            tutorialObjects[0].SetActive(true);  // Enable the first tutorial object
-            tutorialEffect.SetActive(true);      // Enable the tutorial effect
-            currentObjectIndex = 0;
-            canProceed = false;
-            StartCoroutine(DelayNextStep());
-            Started = true;
+
+            GameStateHandler.instance.isPrinting = true;
+            GameStateHandler.instance.isInspecting = true;
+            GameStateHandler.instance.isResearching = true;
+
+            if (tutorialObjects.Length > 0)
+            {
+
+                tutorialObjects[0].SetActive(true);  // Enable the first tutorial object
+                tutorialEffect.SetActive(true);      // Enable the tutorial effect
+                currentObjectIndex = 0;
+                canProceed = false;
+                StartCoroutine(DelayNextStep());
+                Started = true;
+            }
         }
         
     }
@@ -79,6 +81,8 @@ public class TutorialSystem : MonoBehaviour
 
     private void EndTutorial()
     {
+        Started = false;
+
         tutorialEffect.SetActive(false);  // Disable the tutorial effect
         ToggleButton.SetActive(true);
 
@@ -93,6 +97,7 @@ public class TutorialSystem : MonoBehaviour
         }
 
         Debug.Log("Tutorial completed.");
+        //this.GetComponent<TutorialSystem>().enabled = false;
         // You can add additional logic here for when the tutorial ends
     }
 

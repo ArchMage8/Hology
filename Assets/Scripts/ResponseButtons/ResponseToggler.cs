@@ -17,7 +17,7 @@ public class ResponseToggler : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (canToggle && !GameStateHandler.instance.isInspecting && !GameStateHandler.instance.isPrinting)
+        if (canToggle && GameStateHandler.instance.isInspecting == false && GameStateHandler.instance.isPrinting == false)
         {
             StartCoroutine(AnimationWaitToggle());
         }
