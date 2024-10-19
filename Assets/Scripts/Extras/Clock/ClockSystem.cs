@@ -17,7 +17,7 @@ public class ClockSystem : MonoBehaviour
     public SFXManager_Exception AlarmSoundPlayer;
     public AudioClip ClockEndSound;
 
-    [HideInInspector] public bool TimerEndBool = false;
+    public bool TimerEndBool = false;
 
     private int hours = 9;
     private int minutes = 0;
