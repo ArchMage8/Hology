@@ -80,6 +80,7 @@ public class InspectorSystem : MonoBehaviour
 
     void EnterCheckMode()
     {
+        SFXManager.instance.PlaySound(clickSound);
         isInCheckMode = true;
         instruction1.SetActive(false);
         instruction2.SetActive(true);
@@ -94,6 +95,8 @@ public class InspectorSystem : MonoBehaviour
  
         if (clickedObject.CompareTag("PaperComponent") || clickedObject.CompareTag("GuidePage"))
         {
+            SFXManager.instance.PlaySound(clickSound);
+
             canCheck = false;
             //Research Excepetion for Feature Page
             if (clickedObject == GuideResearchPage && currentInspectComponent.Target_Page == GuideResearchPage)
