@@ -25,6 +25,11 @@ public class InspectorSystem : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip clickSound;
+    public AudioClip CorrectSound;
+    public AudioClip WrongSound;
+    public AudioClip MismatchSound;
+
+    public SFXManager_Exception MonitorSounds;
 
 
     private bool isInCheckMode = false;
@@ -94,6 +99,8 @@ public class InspectorSystem : MonoBehaviour
             if (clickedObject == GuideResearchPage && currentInspectComponent.Target_Page == GuideResearchPage)
             {
                 StopCoroutine(DisplayTemporary(Holder));
+
+                MonitorSounds.PlaySound(CorrectSound);
                 StartCoroutine(DisplayTemporary(ResearchIcon));
                 if (!AlreadyPrint)
                 {
@@ -106,6 +113,8 @@ public class InspectorSystem : MonoBehaviour
             {
                 //Research Excepetion
                 StopCoroutine(DisplayTemporary(Holder));
+
+                MonitorSounds.PlaySound(CorrectSound);
                 StartCoroutine(DisplayTemporary(ResearchIcon));
                 if (!AlreadyPrint)
                 {
@@ -120,17 +129,20 @@ public class InspectorSystem : MonoBehaviour
                 if (currentInspectComponent.positiveResponse)
                 {
                     StopCoroutine(DisplayTemporary(Holder));
+                    MonitorSounds.PlaySound(CorrectSound);
                     StartCoroutine(DisplayTemporary(positiveImage));
                 }
                 else
                 {
                     StopCoroutine(DisplayTemporary(Holder));
+                    MonitorSounds.PlaySound(WrongSound);
                     StartCoroutine(DisplayTemporary(negativeImage));
                 }
             }
             else
             {
                 StopCoroutine(DisplayTemporary(Holder));
+                MonitorSounds.PlaySound(MismatchSound);
                 StartCoroutine(DisplayTemporary(noConnect));
             }
         }
