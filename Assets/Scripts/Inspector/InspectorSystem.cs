@@ -17,7 +17,7 @@ public class InspectorSystem : MonoBehaviour
     [Header("Inspector Overlay")]
     public GameObject NewspaperHighlight;
     public GameObject BookHighlight;
-    public GameObject ComponentHighlight;
+    [HideInInspector]public GameObject ComponentHighlight;
 
     [Header("Settings")]
     public float displayDuration = 2f;  // Duration to display "No Connect", "PositiveImage", or "NegativeImage"

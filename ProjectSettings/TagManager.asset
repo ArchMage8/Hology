@@ -58,6 +58,9 @@ TagManager:
   - name: Guidebook
     uniqueID: 1848765009
     locked: 0
+  - name: Tutorial
+    uniqueID: 1611285805
+    locked: 0
   - name: HighlightDim
     uniqueID: 3290015213
     locked: 0
@@ -69,7 +72,4 @@ TagManager:
     locked: 0
   - name: Printer
     uniqueID: 3907512311
-    locked: 0
-  - name: Tutorial
-    uniqueID: 1611285805
     locked: 0
