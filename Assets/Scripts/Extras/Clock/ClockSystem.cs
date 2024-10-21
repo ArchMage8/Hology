@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class ClockSystem : MonoBehaviour
@@ -11,13 +12,18 @@ public class ClockSystem : MonoBehaviour
     public TextMeshProUGUI hoursText;
     public TextMeshProUGUI minutesText;
     public TextMeshProUGUI colonText;
+    public bool TimerEndBool = false;
+
 
     [Space(10)]
     [Header("Audio")]
     public SFXManager_Exception AlarmSoundPlayer;
     public AudioClip ClockEndSound;
 
-    public bool TimerEndBool = false;
+    [Space(10)]
+    public Animator BackgroundSkyAnimator;
+
+
 
     private int hours = 9;
     private int minutes = 0;
@@ -26,6 +32,9 @@ public class ClockSystem : MonoBehaviour
     private bool isClockRunning = false;
 
     private bool colonVisible = true;
+    private bool NoonDone = false;
+    private bool AfterNoonDone = false;
+    private bool DuskDone = false;
 
     private void Awake()
     {
@@ -42,6 +51,27 @@ public class ClockSystem : MonoBehaviour
     void Start()
     {
         UpdateTimeDisplay();
+    }
+
+    private void Update()
+    {
+        if(hours == 12 && !NoonDone)
+        {
+            NoonDone = true;
+            BackgroundSkyAnimator.SetTrigger("Noon");
+        }
+        
+        if(hours == 16 && !AfterNoonDone)
+        {
+            AfterNoonDone = true;
+            BackgroundSkyAnimator.SetTrigger("Afternoon");
+        }
+
+        if(hours == 17 && !DuskDone)
+        {
+            DuskDone = true;
+            BackgroundSkyAnimator.SetTrigger("Dusk");
+        }
     }
 
     public void StartClock()
