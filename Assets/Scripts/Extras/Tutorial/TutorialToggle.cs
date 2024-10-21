@@ -10,6 +10,7 @@ public class TutorialToggle : MonoBehaviour
     {
         if (!GameStateHandler.instance.isInspecting && !GameStateHandler.instance.isResearching && !GameStateHandler.instance.isPrinting)
         {
+            tutorialSystem.enabled = true;
             tutorialSystem.StartTutorial();
             this.gameObject.SetActive(false);
         }

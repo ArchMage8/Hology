@@ -9,12 +9,12 @@ public class Guide_ColliderHandler : MonoBehaviour
 
     private void Start()
     {
-        BookCollider = GetComponent<PolygonCollider2D>();    
+        BookCollider = GetComponent<PolygonCollider2D>();
     }
 
     private void Update()
     {
-        if (GameStateHandler.instance.isPrinting || GameStateHandler.instance.isInspecting || GameStateHandler.instance.isResearching)
+        if (GameStateHandler.instance.isPrinting == true || GameStateHandler.instance.isInspecting == true || GameStateHandler.instance.isResearching == true)
         {
             BookCollider.enabled = false;
         }

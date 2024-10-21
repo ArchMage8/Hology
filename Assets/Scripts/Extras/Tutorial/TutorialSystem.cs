@@ -83,6 +83,8 @@ public class TutorialSystem : MonoBehaviour
     {
         Started = false;
 
+        
+
         tutorialEffect.SetActive(false);  // Disable the tutorial effect
         ToggleButton.SetActive(true);
 
@@ -96,6 +98,7 @@ public class TutorialSystem : MonoBehaviour
             obj.SetActive(false);
         }
 
+        this.enabled = false;
         //Debug.Log("Tutorial completed.");
         //this.GetComponent<TutorialSystem>().enabled = false;
         // You can add additional logic here for when the tutorial ends

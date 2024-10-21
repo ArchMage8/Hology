@@ -7,7 +7,7 @@ public class NPC_Main : MonoBehaviour
 
     public GameObject[] NPCs;
     public bool Walking = false;
-    public float delayBetweenNPCs = 2f;
+    public float delayBetweenNPCs = 30f;
 
     public bool Started = false;
     private int currentNPCIndex = 0;
@@ -37,10 +37,17 @@ public class NPC_Main : MonoBehaviour
 
     public void StartSystem()
     {
+        StartCoroutine(StartTheSystem());
+    }
 
+    private IEnumerator StartTheSystem()
+    {
+
+        yield return new WaitForSeconds(delayBetweenNPCs);
         ActivateNextNPC();
         Started = true;
-    }
+
+    } 
 
     private void ActivateNextNPC()
     {

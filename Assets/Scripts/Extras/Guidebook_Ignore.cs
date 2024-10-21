@@ -21,7 +21,7 @@ public class Guidebook_Ignore : MonoBehaviour
         }
         else
         {
-            bookCollider.enabled = true;
+            //bookCollider.enabled = true;
         }
     }
 }

@@ -150,20 +150,20 @@ public class InspectorSystem : MonoBehaviour
             {
                 if (currentInspectComponent.positiveResponse)
                 {
-                    StopCoroutine(DisplayTemporary(Holder));
+                    //StopCoroutine(DisplayTemporary(Holder));
                     MonitorSounds.PlaySound(CorrectSound);
                     StartCoroutine(DisplayTemporary(positiveImage));
                 }
                 else
                 {
-                    StopCoroutine(DisplayTemporary(Holder));
+                    //StopCoroutine(DisplayTemporary(Holder));
                     MonitorSounds.PlaySound(WrongSound);
                     StartCoroutine(DisplayTemporary(negativeImage));
                 }
             }
             else
             {
-                StopCoroutine(DisplayTemporary(Holder));
+                //StopCoroutine(DisplayTemporary(Holder));
                 MonitorSounds.PlaySound(MismatchSound);
                 StartCoroutine(DisplayTemporary(noConnect));
             }
@@ -174,6 +174,8 @@ public class InspectorSystem : MonoBehaviour
     {
         if (obj != null)
         {
+            Debug.Log("vvv");
+
             obj.SetActive(true);
             yield return new WaitForSeconds(displayDuration);
             obj.SetActive(false);
