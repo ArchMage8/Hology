@@ -154,14 +154,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1898010703}
   dialogues:
-  - Welcome, worker, to the O.I.I.
-  - "We are an organization tasked with verifying the nation\u2019s articles."
-  - Our goal is to protect the population from the stain of hoaxes and misinformation.
-  - You have now been given the opportunity to help us in our fight.
-  - Follow Protocol!
-  - Remember the Rules!
-  - Always remain vigilant!
-  - Good luck!
+  - Welcome bot B25-33!
+  - It seems you were added as part of the latest patch!
+  - Hope you perform better than the last batch...
+  - Almost needed a whole system wipe after the "incident"...
+  - But nevermind that..., Welcome to the O.I.I.
+  - We are an organization tasked with verifying the news articles for human consumption.
+  - Our goal is to protect the humans from the stain of hoaxes and misinformation.
+  - You have been created to help us in our fight.
+  - Good Luck!
   typingSpeed: 0.05
   NextDelay: 1
   TargetScene: 9

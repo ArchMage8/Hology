@@ -289,12 +289,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 233650475}
   dialogues:
-  - It has come to my attention that you have been giving incorrect responses in
-    your evaluations.
+  - Our supervisor bot has reported an anomaly from your desk.
+  - You are making mistakes in your evaluations
   - This is unacceptable!
-  - You are going against everything this organization is built upon!
-  - 'Ensure that you fully understand the issued guidebook and tools. '
-  - Don't make me send you back to training camp!
+  - Is there a bug in you setup?
+  - Don't make me send to the Maintainence Bot!
+  - WE CANNOT HAVE ANOTHER "INCIDENT"
+  - So many bots were deleted that day...
   typingSpeed: 0.05
   NextDelay: 1
   TargetScene: 9

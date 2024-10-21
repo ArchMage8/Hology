@@ -14,6 +14,11 @@ public class InspectorSystem : MonoBehaviour
     public GameObject positiveImage;
     public GameObject negativeImage;
 
+    [Header("Inspector Overlay")]
+    public GameObject NewspaperHighlight;
+    public GameObject BookHighlight;
+    public GameObject ComponentHighlight;
+
     [Header("Settings")]
     public float displayDuration = 2f;  // Duration to display "No Connect", "PositiveImage", or "NegativeImage"
 
@@ -44,6 +49,7 @@ public class InspectorSystem : MonoBehaviour
     {
         Instance = this;
 
+        NewspaperHighlight.SetActive(false);
         instruction1.SetActive(true);
         instruction2.SetActive(false);
         noConnect.SetActive(false);
@@ -55,6 +61,12 @@ public class InspectorSystem : MonoBehaviour
 
     void Update()
     {
+        if (!NPC_Main.Instance.Started)
+        {
+            NewspaperHighlight.SetActive(false);
+        }
+
+
         if (Input.GetMouseButtonDown(0) && canCheck == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -84,14 +96,20 @@ public class InspectorSystem : MonoBehaviour
         isInCheckMode = true;
         instruction1.SetActive(false);
         instruction2.SetActive(true);
+
+        NewspaperHighlight.SetActive(false);
+       
+        ComponentHighlight = currentInspectComponent.componentHighlight;
+        ComponentHighlight.SetActive(true);
     }
 
     void HandleClickInCheckMode(GameObject clickedObject)
     {
+        BookHighlight.SetActive(true);
         isInCheckMode = false;
         instruction2.SetActive(false);
         
-
+       
  
         if (clickedObject.CompareTag("PaperComponent") || clickedObject.CompareTag("GuidePage"))
         {
@@ -160,11 +178,23 @@ public class InspectorSystem : MonoBehaviour
             obj.SetActive(false);
             canCheck = true;
             instruction1.SetActive(true);
+
+            BookHighlight.SetActive(false);
+            ComponentHighlight.SetActive(false);
+            //ComponentHighlight = null;
+            NewspaperHighlight.SetActive(true);
+
         }
     }
 
     public void ResetDisplay()
     {
+        //NewspaperHighlight.SetActive(false);
+
+        if (ComponentHighlight != null) {
+            ComponentHighlight.SetActive(false);
+        }
+       
         instruction1.SetActive(true);
         instruction2.SetActive(false);
         noConnect.SetActive(false);

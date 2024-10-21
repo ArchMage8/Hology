@@ -50,6 +50,7 @@ public class ClockSystem : MonoBehaviour
         {
             isClockRunning = true;
             StartCoroutine(BlinkingColon());
+            NPC_Main.Instance.StartSystem();
             StartCoroutine(UpdateClock());
         }
     }

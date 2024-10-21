@@ -12,6 +12,11 @@ public class NPC_Child : MonoBehaviour
     public float speed = 3f;
     public float dialogueDisplayTime = 2f;
 
+    private void Start()
+    {
+        NPC_Dialogue.SetActive(false);
+    }
+
     void Update()
     {
         if (isWalking)

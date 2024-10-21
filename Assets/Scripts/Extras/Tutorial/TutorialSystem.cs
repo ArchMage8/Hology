@@ -48,7 +48,7 @@ public class TutorialSystem : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canProceed && Started)
         {
-            Debug.Log("Test");
+            //Debug.Log("Test");
             ProceedToNextObject();
         }
     }
@@ -96,7 +96,7 @@ public class TutorialSystem : MonoBehaviour
             obj.SetActive(false);
         }
 
-        Debug.Log("Tutorial completed.");
+        //Debug.Log("Tutorial completed.");
         //this.GetComponent<TutorialSystem>().enabled = false;
         // You can add additional logic here for when the tutorial ends
     }

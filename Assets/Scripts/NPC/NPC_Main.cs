@@ -9,6 +9,7 @@ public class NPC_Main : MonoBehaviour
     public bool Walking = false;
     public float delayBetweenNPCs = 2f;
 
+    public bool Started = false;
     private int currentNPCIndex = 0;
 
     private void Awake()
@@ -29,16 +30,21 @@ public class NPC_Main : MonoBehaviour
         foreach (GameObject npc in NPCs)
         {
             npc.SetActive(false);
+            
         }
+        
     }
 
     public void StartSystem()
     {
-        StartCoroutine(StartTheSystem());
+
+        ActivateNextNPC();
+        Started = true;
     }
 
     private void ActivateNextNPC()
     {
+        Debug.Log("Test");
         if (currentNPCIndex < NPCs.Length)
         {
             NPCs[currentNPCIndex].SetActive(true);
@@ -61,19 +67,9 @@ public class NPC_Main : MonoBehaviour
 
     private void Update()
     {
-        if (!Walking)
+        if (!Walking && Started)
         {
             StartCoroutine(WaitAndActivateNextNPC());
-        }
-    }
-
-    private IEnumerator StartTheSystem()
-    {
-        yield return new WaitForSeconds(delayBetweenNPCs);
-        
-        if (NPCs.Length > 0)
-        {
-            ActivateNextNPC();
         }
     }
 }

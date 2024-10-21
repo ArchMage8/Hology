@@ -282,12 +282,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1792782682}
   dialogues:
-  - It has come to my attention that you have been working slower than expected.
+  - Our supervisor bot has reported an anomaly from your desk.
+  - It seems you are not meeting the daily quota imposed by the O.I.I.
   - This pace is unacceptable!
   - Thousands of articles are published every day, and we must keep up with that
     pace!
-  - Always complete your assigned tasks!
-  - Don't make me send you back to training camp!
+  - Return to your desk and speed up your processing....
+  - '*Maybe i should''ve gone with that Premium MaxBot*'
   typingSpeed: 0.05
   NextDelay: 1
   TargetScene: 9
