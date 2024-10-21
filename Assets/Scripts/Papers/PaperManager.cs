@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using Mono.Cecil.Cil;
 
 public class PaperManager : MonoBehaviour
 {
@@ -24,14 +25,14 @@ public class PaperManager : MonoBehaviour
 
     public bool canNext = false;
     private bool waitingForContinue = false;  // Flag to check if we're waiting for player to continue
+
     
-    
- 
+
     //[Header("Clock")]
     //public TimerClock timerClock;  // Reference to the TimerClock script
     public bool timerExpired = false;  // Flag for the timer expiration
     [HideInInspector] public bool Started = false;
- 
+
     [Header("Audio")]
     public AudioClip PaperIN;
     public AudioClip PaperOUT;
@@ -40,7 +41,7 @@ public class PaperManager : MonoBehaviour
     public AudioClip PrinterSound;
     public SFXManager_Exception PrinterSoundPlayer;
 
-
+    [HideInInspector] public bool PaperOnScreen = false;
 
     private void Awake()
     {
@@ -72,6 +73,7 @@ public class PaperManager : MonoBehaviour
         if (papers.Length > 0)
         {
             papers[0].SetActive(true);  // Enable the first paper
+            PaperOnScreen = true;
             SFXManager.PlaySound(PaperIN);
             completedPapers++;
             canNext = true;
@@ -92,6 +94,8 @@ public class PaperManager : MonoBehaviour
     public void NextPaper(bool hoax)
     {
         if (!canNext) return;
+
+        PaperOnScreen = false;
 
         PaperProperties currentPaperProps = papers[currentPaperIndex].GetComponent<PaperProperties>();
         canNext = false;
@@ -155,6 +159,7 @@ public class PaperManager : MonoBehaviour
 
                     SFXManager.PlaySound(PaperIN);
                     papers[currentPaperIndex].SetActive(true);  // Enable the next paper
+                    StartCoroutine(WaitForPaper());
                     completedPapers++;
                     CurrentPaper = papers[currentPaperIndex];
                     canNext = true;  // Set canNext to true only when a new paper is available
@@ -229,5 +234,16 @@ public class PaperManager : MonoBehaviour
         incorrectPapers++;
         PrinterSoundPlayer.PlaySound(PrinterSound);
         waitingForContinue = true;  // Set the flag to wait for player input
+    }
+
+    private IEnumerator WaitForPaper()
+    {
+        yield return new WaitForSeconds(0.5f);
+        PaperOnScreen = true;
+
+        if(InspectorSystem.Instance.gameObject.activeSelf == true)
+        {
+            InspectorSystem.Instance.NewspaperHighlight.SetActive(true);
+        }
     }
 }

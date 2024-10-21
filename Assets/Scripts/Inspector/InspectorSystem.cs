@@ -42,13 +42,14 @@ public class InspectorSystem : MonoBehaviour
     [HideInInspector] public bool AlreadyPrint = false;
     private InspectComponent currentInspectComponent;
     private GameObject Holder;
+    private bool CanHighlight;
 
     //private bool isDisplaying;
 
     void Awake()
     {
         Instance = this;
-
+    
         NewspaperHighlight.SetActive(false);
         instruction1.SetActive(true);
         instruction2.SetActive(false);
@@ -61,7 +62,7 @@ public class InspectorSystem : MonoBehaviour
 
     void Update()
     {
-        if (!NPC_Main.Instance.Started)
+        if (!NPC_Main.Instance.Started || !PaperManager.Instance.PaperOnScreen)
         {
             NewspaperHighlight.SetActive(false);
         }
