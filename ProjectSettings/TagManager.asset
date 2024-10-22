@@ -46,6 +46,9 @@ TagManager:
   - name: Background
     uniqueID: 3089021935
     locked: 0
+  - name: TableToys
+    uniqueID: 795497087
+    locked: 0
   - name: Newspaper
     uniqueID: 13965565
     locked: 0

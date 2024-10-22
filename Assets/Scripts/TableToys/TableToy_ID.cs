@@ -23,8 +23,9 @@ public class TableToy_ID : MonoBehaviour
 
     }
 
-    public void CanPlay()
+    public void EnablePlay()
     {
+        Debug.Log("pLAY");
         canPlay = true;
     }
 
