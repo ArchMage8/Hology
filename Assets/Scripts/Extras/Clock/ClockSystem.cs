@@ -58,7 +58,8 @@ public class ClockSystem : MonoBehaviour
         if(hours == 12 && !NoonDone)
         {
             NoonDone = true;
-            BackgroundSkyAnimator.SetTrigger("Noon");
+            BackgroundSkyAnimator.SetTrigger("MorningToNoon" +
+                "");
         }
         
         if(hours == 16 && !AfterNoonDone)

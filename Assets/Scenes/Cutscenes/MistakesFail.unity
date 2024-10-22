@@ -299,7 +299,7 @@ MonoBehaviour:
   typingSpeed: 0.05
   NextDelay: 1
   TargetScene: 9
-  FadeAnimator: {fileID: 0}
+  FadeAnimator: {fileID: 1304773506}
 --- !u!4 &388003222
 Transform:
   m_ObjectHideFlags: 0
@@ -801,6 +801,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6089f0678b62b6b4b8024206f590cc4b, type: 3}
+--- !u!95 &1304773506 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5691905147325519636, guid: 6089f0678b62b6b4b8024206f590cc4b, type: 3}
+  m_PrefabInstance: {fileID: 1304773505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1330423030
 GameObject:
   m_ObjectHideFlags: 0

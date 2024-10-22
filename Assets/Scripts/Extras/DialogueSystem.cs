@@ -106,7 +106,7 @@ public class DialogueSystem : MonoBehaviour
     private void EndDialogue()
     {
         Debug.Log("End of dialogue array.");
-        FadeAnimator.SetTrigger("EndOfScene");
+        FadeAnimator.SetTrigger("EndScene");
         SceneManager.LoadScene(TargetScene);
     }
 }
