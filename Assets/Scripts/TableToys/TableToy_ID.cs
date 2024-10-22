@@ -7,6 +7,11 @@ public class TableToy_ID : MonoBehaviour
     private Animator animator;
     private bool canPlay = true;
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void OnMouseDown()
     {
         if (canPlay == true)
