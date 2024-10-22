@@ -13779,6 +13779,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.95686275
       objectReference: {fileID: 0}
+    - target: {fileID: 7358565325347416923, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358565325347416923, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[11]
+      value: 795497087
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358565326038878675, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358565326038878675, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[11]
+      value: 795497087
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
 --- !u!95 &843751414412181328 stripped
@@ -13940,18 +13956,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5418740213421778252, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
       propertyPath: pages.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5418740213421778252, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
       propertyPath: pages.Array.data[3]
       value: 
-      objectReference: {fileID: 1516437260}
+      objectReference: {fileID: 565783911}
     - target: {fileID: 5418740213421778252, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
       propertyPath: pages.Array.data[4]
       value: 
-      objectReference: {fileID: 868064137}
+      objectReference: {fileID: 1516437260}
     - target: {fileID: 5418740213421778252, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
       propertyPath: pages.Array.data[5]
+      value: 
+      objectReference: {fileID: 868064137}
+    - target: {fileID: 5418740213421778252, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
+      propertyPath: pages.Array.data[6]
       value: 
       objectReference: {fileID: 81736679}
     - target: {fileID: 5418740213424536275, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}

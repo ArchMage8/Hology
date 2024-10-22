@@ -52,7 +52,7 @@ public class PostProcessingHandler : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            postProcessVolume = GetComponent<Volume>();
+            //postProcessVolume = GetComponent<Volume>();
 
             if (postProcessVolume.profile.TryGet(out bloom) &&
                 postProcessVolume.profile.TryGet(out vignette) &&
@@ -69,6 +69,8 @@ public class PostProcessingHandler : MonoBehaviour
 
     public void NoonEffect()
     {
+ 
+
         StartCoroutine(TransitionEffects(
             bloom.intensity.value, NoonBloomIntensity,
             bloom.scatter.value, NoonBloomScatter,
@@ -80,6 +82,8 @@ public class PostProcessingHandler : MonoBehaviour
 
     public void EveningEffect()
     {
+    
+
         StartCoroutine(TransitionEffects(
             bloom.intensity.value, EveningBloomIntensity,
             bloom.scatter.value, EveningBloomScatter,
@@ -91,6 +95,8 @@ public class PostProcessingHandler : MonoBehaviour
 
     public void DuskEffect()
     {
+      
+
         StartCoroutine(TransitionEffects(
             bloom.intensity.value, DuskBloomIntensity,
             bloom.scatter.value, DuskBloomScatter,
@@ -112,7 +118,10 @@ public class PostProcessingHandler : MonoBehaviour
 
         while (elapsed < transitionDuration)
         {
-            float t = elapsed / transitionDuration;
+
+            Debug.Log("A");
+
+            float t = transitionDuration;
 
             // Bloom interpolation
             bloom.intensity.value = Mathf.Lerp(startBloomIntensity, targetBloomIntensity, t);
