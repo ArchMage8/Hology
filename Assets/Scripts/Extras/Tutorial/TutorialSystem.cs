@@ -16,7 +16,7 @@ public class TutorialSystem : MonoBehaviour
 
     private void OnEnable()
     {
-       StartCoroutine(StartLogic());
+       //StartCoroutine(StartLogic());
     }
 
     public void StartTutorial()

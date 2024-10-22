@@ -55,7 +55,7 @@ public class InGameSceneNavigator : MonoBehaviour
     {
         completePrint.SetActive(true);
         PrinterSoundPlayer.PlaySound(PrinterSound);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5.2f);
         StartCoroutine(LoadTargetScene(LevelSelectIndex));
     }
 
