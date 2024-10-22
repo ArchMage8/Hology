@@ -425,6 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2184280670774186985}
+  - component: {fileID: 5506203779257727256}
   m_Layer: 0
   m_Name: VFX
   m_TagString: Untagged
@@ -449,3 +450,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5506203779257727256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2184280670774186984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245bc327291c1b14faaa46642da04e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postProcessVolume: {fileID: 2184280669958177453}
+  NoonBloomIntensity: 0
+  NoonBloomScatter: 0
+  NoonVignetteColor: 
+  NoonVignetteIntensity: 0
+  NoonWhiteBalanceTemp: 0
+  NoonWhiteBalanceTint: 0
+  EveningBloomIntensity: 0
+  EveningBloomScatter: 0
+  EveningVignetteColor: 
+  EveningVignetteIntensity: 0
+  EveningWhiteBalanceTemp: 0
+  EveningWhiteBalanceTint: 0
+  DuskBloomIntensity: 0
+  DuskBloomScatter: 0
+  DuskVignetteColor: 
+  DuskVignetteIntensity: 0
+  DuskWhiteBalanceTemp: 0
+  DuskWhiteBalanceTint: 0

@@ -4648,6 +4648,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 1965773015269075128, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358565325760571085, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358565326038878675, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_Intensity
+      value: 0.36
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
 --- !u!1 &1017634028 stripped
