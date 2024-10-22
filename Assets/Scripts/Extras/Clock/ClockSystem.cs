@@ -59,21 +59,18 @@ public class ClockSystem : MonoBehaviour
         {
             NoonDone = true;
             BackgroundSkyAnimator.SetTrigger("MorningToNoon" + "");
-            PostProcessingHandler.instance.NoonEffect();
         }
         
         if(hours == 16 && !AfterNoonDone)
         {
             AfterNoonDone = true;
             BackgroundSkyAnimator.SetTrigger("Afternoon");
-            PostProcessingHandler.instance.EveningEffect();
         }
 
         if(hours == 17 && !DuskDone)
         {
             DuskDone = true;
             BackgroundSkyAnimator.SetTrigger("Dusk");
-            PostProcessingHandler.instance.DuskEffect();
         }
     }
 
