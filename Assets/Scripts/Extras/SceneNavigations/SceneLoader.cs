@@ -7,8 +7,9 @@ public class SceneLoader : MonoBehaviour
 {
     public Sprite originalSprite;
     public Sprite hoverSprite;
-    public int LevelSelectIndex;
+   
     public Animator FadeAnimator;
+    public int DestinationScene;
 
     private SpriteRenderer spriteRenderer;
 
@@ -44,6 +45,6 @@ public class SceneLoader : MonoBehaviour
     {
         FadeAnimator.SetTrigger("EndScene");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(LevelSelectIndex);
+        SceneManager.LoadScene(DestinationScene);
     }
 }
