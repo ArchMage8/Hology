@@ -14,7 +14,7 @@ public class NPC_Child : MonoBehaviour
 
     private void Start()
     {
-        NPC_Dialogue.SetActive(false);
+        NPC_Dialogue.SetActive(true);
     }
 
     void Update()
@@ -42,28 +42,5 @@ public class NPC_Child : MonoBehaviour
                 npcMain.Walking = false;
             }
         }
-    }
-
-    private void OnMouseDown()
-    {
-        if (!hasInteracted)
-        {
-            StopNPCAndShowDialogue();
-        }
-    }
-
-    private void StopNPCAndShowDialogue()
-    {
-        isWalking = false;
-        NPC_Dialogue.SetActive(true);
-        StartCoroutine(ResumeWalkingAfterDialogue());
-        hasInteracted = true;
-    }
-
-    private IEnumerator ResumeWalkingAfterDialogue()
-    {
-        yield return new WaitForSeconds(dialogueDisplayTime);
-        NPC_Dialogue.SetActive(false);
-        isWalking = true;
     }
 }
