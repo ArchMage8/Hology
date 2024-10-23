@@ -13,10 +13,11 @@ public class TutorialSystem : MonoBehaviour
     private bool canProceed = false;     // Track if the player can proceed to the next tutorial object
     private bool Started = false;
 
+    private bool HasBeenInteracted = false;
 
     private void OnEnable()
     {
-       //StartCoroutine(StartLogic());
+       StartCoroutine(StartLogic());
     }
 
     public void StartTutorial()
@@ -110,6 +111,8 @@ public class TutorialSystem : MonoBehaviour
 
         if (!OnAtStart)
         {
+            HasBeenInteracted = true;
+
             // Disable all tutorial objects at the start
             foreach (GameObject obj in tutorialObjects)
             {
@@ -120,8 +123,9 @@ public class TutorialSystem : MonoBehaviour
             tutorialEffect.SetActive(false);
         }
 
-        else
+        else if (!HasBeenInteracted)
         {
+            HasBeenInteracted = true;
             currentObjectIndex = 0;
             StartTutorial();
         }

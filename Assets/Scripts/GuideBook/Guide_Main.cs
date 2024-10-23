@@ -6,6 +6,9 @@ public class Guide_Main : MonoBehaviour
     public bool Can_Change = true;
     public int CurrentIndex = 0;
 
+    [Header("Audio")]
+    public AudioClip PageTurnSound;
+
     void Start()
     {
         foreach (var page in pages)
@@ -32,6 +35,8 @@ public class Guide_Main : MonoBehaviour
             pages[CurrentIndex].SetActive(false);
         }
 
+        SFXManager.instance.PlaySound(PageTurnSound);
+        
         pages[index].SetActive(true);
         CurrentIndex = index;
     }

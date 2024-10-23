@@ -5456,6 +5456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationDelay: 0
+  ResearchMachineAnimator: {fileID: 0}
   ButtonPress: {fileID: 8300000, guid: 333b08e45f9c24441a5a4eb79a95ace1, type: 3}
   SFXManager: {fileID: 46238711}
 --- !u!95 &855861081
@@ -7626,6 +7627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationDelay: 0
+  ResearchMachineAnimator: {fileID: 0}
   ButtonPress: {fileID: 8300000, guid: 333b08e45f9c24441a5a4eb79a95ace1, type: 3}
   SFXManager: {fileID: 46238711}
 --- !u!212 &1170305684

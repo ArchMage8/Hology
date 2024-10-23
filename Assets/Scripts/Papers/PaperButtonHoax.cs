@@ -6,6 +6,7 @@ public class PaperButtonHoax : MonoBehaviour
     public float AnimationDelay;
     private Animator animator;
     private Animator PaperAnimator;
+    public Animator ResearchMachineAnimator;
     private bool CanPress = true;
 
     [Header("Audio")]
@@ -39,6 +40,7 @@ public class PaperButtonHoax : MonoBehaviour
             {
                 PaperAnimator = PaperManager.Instance.GetActivePaper().GetComponent<Animator>();
                 PaperAnimator.SetTrigger("Close");
+                ResearchMachineAnimator.SetTrigger("Out");
                 //SFXManager.PlaySound(ButtonPress);
                 yield return new WaitForSeconds(AnimationDelay);
                 CanPress = true;

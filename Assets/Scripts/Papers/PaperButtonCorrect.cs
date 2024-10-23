@@ -5,6 +5,7 @@ public class PaperButtonCorrect : MonoBehaviour
 {
     public float AnimationDelay;
     private Animator animator;
+    public Animator ResearchMachineAnimator;
     private Animator PaperAnimator;
     private bool CanPress = true;
 
@@ -37,9 +38,9 @@ public class PaperButtonCorrect : MonoBehaviour
 
             if (PaperManager.Instance.Started == true)
             {
-
                 PaperAnimator = PaperManager.Instance.GetActivePaper().GetComponent<Animator>();
                 PaperAnimator.SetTrigger("Close");
+                ResearchMachineAnimator.SetTrigger("Out");
                 //SFXManager.PlaySound(ButtonPress);
                 yield return new WaitForSeconds(AnimationDelay);
                 CanPress = true;
