@@ -34,6 +34,7 @@ public class PaperButtonCorrect : MonoBehaviour
         {
             CanPress = false;
             animator.SetTrigger("Press");
+            StartCoroutine(DisableResearchMachine());
             SFXManager.PlaySound(ButtonPress);
 
             if (PaperManager.Instance.Started == true)

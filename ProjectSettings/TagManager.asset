@@ -55,6 +55,9 @@ TagManager:
   - name: Interactables
     uniqueID: 579902151
     locked: 0
+  - name: Particles
+    uniqueID: 1204863379
+    locked: 0
   - name: ButtonTray
     uniqueID: 105112773
     locked: 0
