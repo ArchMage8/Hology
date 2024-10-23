@@ -77,6 +77,7 @@ public class InspectorSystem : MonoBehaviour
             {
                 if (!isInCheckMode)
                 {
+                    
                     currentInspectComponent = clickedCollider.GetComponent<InspectComponent>();
                     if (currentInspectComponent != null)
                     {
@@ -112,7 +113,7 @@ public class InspectorSystem : MonoBehaviour
         
        
  
-        if (clickedObject.CompareTag("PaperComponent") || clickedObject.CompareTag("GuidePage"))
+        if (clickedObject.CompareTag("GuidePage"))
         {
             SFXManager.instance.PlaySound(clickSound);
 
@@ -168,14 +169,19 @@ public class InspectorSystem : MonoBehaviour
                 StartCoroutine(DisplayTemporary(noConnect));
             }
         }
+
+        else
+        {
+            Debug.Log("2");
+            InvalidClick();
+            isInCheckMode = false;
+        }
     }
 
     IEnumerator DisplayTemporary(GameObject obj)
     {
         if (obj != null)
         {
-            Debug.Log("vvv");
-
             obj.SetActive(true);
             yield return new WaitForSeconds(displayDuration);
             obj.SetActive(false);
@@ -205,5 +211,25 @@ public class InspectorSystem : MonoBehaviour
         negativeImage.SetActive(false);
         ResearchIcon.SetActive(false);
         //ResearchButton.SetActive(false);
+    }
+
+    private void InvalidClick()
+    {
+        if (ComponentHighlight != null)
+        {
+            ComponentHighlight.SetActive(false);
+        }
+
+        instruction1.SetActive(true);
+        instruction2.SetActive(false);
+        noConnect.SetActive(false);
+        positiveImage.SetActive(false);
+        negativeImage.SetActive(false);
+        ResearchIcon.SetActive(false);
+
+        NewspaperHighlight.SetActive(true);
+        BookHighlight.SetActive(false);
+
+        isInCheckMode = false;
     }
 }

@@ -42,10 +42,10 @@ public class NPC_Main : MonoBehaviour
 
     private IEnumerator StartTheSystem()
     {
-
+        Started = true;
         yield return new WaitForSeconds(delayBetweenNPCs);
         ActivateNextNPC();
-        Started = true;
+        
 
     } 
 

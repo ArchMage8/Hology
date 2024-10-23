@@ -25,8 +25,8 @@ public class ClockSystem : MonoBehaviour
 
 
 
-    private int hours = 9;
-    private int minutes = 0;
+    public int hours = 9;
+    public int minutes = 0;
 
     private int minuteCounter = 0;
     private bool isClockRunning = false;
@@ -57,20 +57,22 @@ public class ClockSystem : MonoBehaviour
     {
         if(hours == 12 && !NoonDone)
         {
+           
             NoonDone = true;
-            BackgroundSkyAnimator.SetTrigger("MorningToNoon" + "");
+            BackgroundSkyAnimator.SetTrigger("MorningToNoon");
         }
         
         if(hours == 16 && !AfterNoonDone)
         {
+            
             AfterNoonDone = true;
-            BackgroundSkyAnimator.SetTrigger("Afternoon");
+            BackgroundSkyAnimator.SetTrigger("NoonToEvening");
         }
 
         if(hours == 17 && !DuskDone)
-        {
+        { 
             DuskDone = true;
-            BackgroundSkyAnimator.SetTrigger("Dusk");
+            BackgroundSkyAnimator.SetTrigger("EveningToDusk");
         }
     }
 
