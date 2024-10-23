@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
-using Mono.Cecil.Cil;
 
 public class PaperManager : MonoBehaviour
 {
