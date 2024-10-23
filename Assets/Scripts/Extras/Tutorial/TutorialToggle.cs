@@ -12,7 +12,9 @@ public class TutorialToggle : MonoBehaviour
         {
             tutorialSystem.enabled = true;
             tutorialSystem.StartTutorial();
-            this.gameObject.SetActive(false);
+            
+            BoxCollider2D temp = gameObject.GetComponent<BoxCollider2D>();
+            temp.enabled = false;
         }
     }
 }

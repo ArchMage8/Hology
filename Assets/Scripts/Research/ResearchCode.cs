@@ -12,6 +12,7 @@ public class ResearchCode : MonoBehaviour
     private GameObject currentActivePaper;
     private GameObject currentResearchPaper;
     private bool isChecking = false;
+    private bool canEnter = true;
 
     public TextMeshProUGUI codeDisplayText;  // Reference to the TextMeshPro component for displaying the input
 
@@ -23,6 +24,8 @@ public class ResearchCode : MonoBehaviour
 
     [Header("Main Machine")]
     public Animator MachineAnimator;
+    public GameObject ERR_Text;
+    public GameObject ACC_Text;
 
     void Awake()
     {
@@ -36,18 +39,22 @@ public class ResearchCode : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
+        ERR_Text.SetActive(false);
+        ACC_Text.SetActive(false);
     }
 
     public void AddDigit(string digit)
     {
-        if (playerInput.Length < 3)
+        if (canEnter)
         {
-            playerInput += digit;
-            UpdateDisplay();  // Update the displayed input
-            if(playerInput.Length == 3)
+            if (playerInput.Length < 3)
             {
-                StartCoroutine(CheckCode());
+                playerInput += digit;
+                UpdateDisplay();  // Update the displayed input
+                if (playerInput.Length == 3)
+                {
+                    StartCoroutine(CheckCode());
+                }
             }
         }
     }
@@ -122,5 +129,22 @@ public class ResearchCode : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         this.gameObject.SetActive(false);
         MachineAnimator.gameObject.SetActive(false);
+    }
+
+    private IEnumerator CorrectCode()
+    {
+        ACC_Text.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        ACC_Text.SetActive(false);
+        CodeCorrect();
+    }
+
+    private IEnumerator IncorrectCode()
+    {
+        canEnter = false;
+        ERR_Text.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        ERR_Text.SetActive(false);
+        canEnter = true;
     }
 }

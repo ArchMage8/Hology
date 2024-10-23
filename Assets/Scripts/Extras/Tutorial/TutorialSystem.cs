@@ -87,8 +87,8 @@ public class TutorialSystem : MonoBehaviour
         
 
         tutorialEffect.SetActive(false);  // Disable the tutorial effect
-        ToggleButton.SetActive(true);
-
+        
+        ToggleButton.GetComponent<BoxCollider2D>().enabled = true;
         GameStateHandler.instance.isResearching = false;
         GameStateHandler.instance.isPrinting = false;
         GameStateHandler.instance.isInspecting = false;
