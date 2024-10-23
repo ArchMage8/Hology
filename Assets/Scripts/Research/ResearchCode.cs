@@ -68,15 +68,17 @@ public class ResearchCode : MonoBehaviour
 
         if (playerInput == correctCode)
         {
-            CodeCorrect();
+            playerInput = "";  // Reset the input
+            UpdateDisplay();   // Clear the display
+            StartCoroutine(CorrectCode());
         }
         else
         {
-            CodeWrong();
-        }
+            playerInput = "";  // Reset the input
+            UpdateDisplay();   // Clear the display
+            StartCoroutine(IncorrectCode());
 
-        playerInput = "";  // Reset the input
-        UpdateDisplay();   // Clear the display
+        }
     }
 
     private void CodeCorrect()
