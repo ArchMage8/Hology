@@ -40,7 +40,7 @@ public class PaperButtonCorrect : MonoBehaviour
             {
                 PaperAnimator = PaperManager.Instance.GetActivePaper().GetComponent<Animator>();
                 PaperAnimator.SetTrigger("Close");
-                ResearchMachineAnimator.SetTrigger("Out");
+                
                 //SFXManager.PlaySound(ButtonPress);
                 yield return new WaitForSeconds(AnimationDelay);
                 CanPress = true;
@@ -52,6 +52,16 @@ public class PaperButtonCorrect : MonoBehaviour
                 CanPress = true;
                 yield return null;
             }
+        }
+    }
+
+    private IEnumerator DisableResearchMachine()
+    {
+        if (ResearchMachineAnimator.gameObject.activeSelf)
+        {
+            ResearchMachineAnimator.SetTrigger("Out");
+            yield return new WaitForSeconds(AnimationDelay);
+            ResearchMachineAnimator.gameObject.SetActive(false);
         }
     }
 }
