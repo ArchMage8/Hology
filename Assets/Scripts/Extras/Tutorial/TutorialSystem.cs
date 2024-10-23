@@ -24,7 +24,7 @@ public class TutorialSystem : MonoBehaviour
     {
         if (!Started)
         {
-            ToggleButton.SetActive(false);
+            
 
 
             GameStateHandler.instance.isPrinting = true;
@@ -61,15 +61,16 @@ public class TutorialSystem : MonoBehaviour
             
         
 
-        if (currentObjectIndex < tutorialObjects.Length - 1)
+        if (currentObjectIndex < tutorialObjects.Length - 1 && canProceed)
         {
             currentObjectIndex++;  // Move to the next object
             tutorialObjects[currentObjectIndex].SetActive(true);  // Enable the next object
             canProceed = false;
             StartCoroutine(DelayNextStep());
         }
-        else
+        else if(currentObjectIndex == tutorialObjects.Length - 1)
         {
+           
             EndTutorial();  // End the tutorial when all objects have been shown
         }
     }
@@ -82,10 +83,9 @@ public class TutorialSystem : MonoBehaviour
 
     private void EndTutorial()
     {
+        Debug.Log("BBB");
+
         Started = false;
-
-        
-
         tutorialEffect.SetActive(false);  // Disable the tutorial effect
         
         ToggleButton.GetComponent<BoxCollider2D>().enabled = true;
@@ -99,7 +99,9 @@ public class TutorialSystem : MonoBehaviour
             obj.SetActive(false);
         }
 
-        this.enabled = false;
+        currentObjectIndex = 0;
+
+        //this.enabled = false;
         //Debug.Log("Tutorial completed.");
         //this.GetComponent<TutorialSystem>().enabled = false;
         // You can add additional logic here for when the tutorial ends

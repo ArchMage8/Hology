@@ -42,7 +42,7 @@ public class NPC_Main : MonoBehaviour
 
     private IEnumerator StartTheSystem()
     {
-        Started = true;
+        
         yield return new WaitForSeconds(delayBetweenNPCs);
         ActivateNextNPC();
         
@@ -57,7 +57,8 @@ public class NPC_Main : MonoBehaviour
             NPCs[currentNPCIndex].SetActive(true);
             NPC_Child npcChild = NPCs[currentNPCIndex].GetComponent<NPC_Child>();
             npcChild.Walk();
-           
+            Started = true;
+
         }
     }
 

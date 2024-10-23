@@ -104,10 +104,12 @@ public class PaperManager : MonoBehaviour
 
         if (currentPaperProps.Hoax != hoax)
         {
+            SFXManager.PlaySound(PaperOUT);
             StartCoroutine(printError(currentPaperProps));
         }
         else
         {
+            SFXManager.PlaySound(PaperOUT);
             StartCoroutine(HandleNextPaper(currentPaperProps, hoax));
         }
     }
@@ -130,8 +132,6 @@ public class PaperManager : MonoBehaviour
 
     private IEnumerator HandleNextPaper(PaperProperties currentPaperProps, bool hoax)
     {
-        SFXManager.PlaySound(PaperOUT);
-        
 
         GameStateHandler.instance.isResearching = false;
         //canNext = false;

@@ -47,6 +47,7 @@ public class ResearchCode : MonoBehaviour
     {
         if (canEnter)
         {
+            
             if (playerInput.Length < 3)
             {
                 playerInput += digit;
