@@ -94,6 +94,7 @@ public class PaperManager : MonoBehaviour
     {
         if (!canNext) return;
 
+        
         PaperOnScreen = false;
 
         PaperProperties currentPaperProps = papers[currentPaperIndex].GetComponent<PaperProperties>();
@@ -103,12 +104,12 @@ public class PaperManager : MonoBehaviour
 
         if (currentPaperProps.Hoax != hoax)
         {
-            SFXManager.PlaySound(PaperOUT);
+            
             StartCoroutine(printError(currentPaperProps));
         }
         else
         {
-            SFXManager.PlaySound(PaperOUT);
+           
             StartCoroutine(HandleNextPaper(currentPaperProps, hoax));
         }
     }
@@ -213,7 +214,6 @@ public class PaperManager : MonoBehaviour
 
     private IEnumerator DisableCurrentPaper()
     {
-        
         GameObject Temp = GetActivePaper();
         
         Animator animator = Temp.GetComponent<Animator>();
@@ -244,5 +244,10 @@ public class PaperManager : MonoBehaviour
         {
             InspectorSystem.Instance.NewspaperHighlight.SetActive(true);
         }
+    }
+
+    public void PlayPaperOut()
+    {
+        SFXManager.PlaySound(PaperOUT);
     }
 }

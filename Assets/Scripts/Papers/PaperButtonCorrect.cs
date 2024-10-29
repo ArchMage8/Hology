@@ -41,7 +41,8 @@ public class PaperButtonCorrect : MonoBehaviour
             {
                 PaperAnimator = PaperManager.Instance.GetActivePaper().GetComponent<Animator>();
                 PaperAnimator.SetTrigger("Close");
-                
+                PaperManager.Instance.PlayPaperOut();
+
                 //SFXManager.PlaySound(ButtonPress);
                 yield return new WaitForSeconds(AnimationDelay);
                 CanPress = true;
