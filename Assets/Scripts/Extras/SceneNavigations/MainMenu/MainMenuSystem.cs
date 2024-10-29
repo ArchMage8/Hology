@@ -70,7 +70,8 @@ public class MainMenuSystem : MonoBehaviour
 
     private IEnumerator PaperEndDelay()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7f);
+        CreditsPaper.SetActive(false);
         PaperActive = false;
 
     }

@@ -4612,6 +4612,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 843751412961034955, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 843751413262582726, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4743,6 +4747,10 @@ PrefabInstance:
     - target: {fileID: 3757981989003168829, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
       propertyPath: EveningVignetteIntensity
       value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862900307107460690, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5931524510634475452, guid: 4f61504a5aaf88c4bb8193b438e6c7d5, type: 3}
       propertyPath: m_IsActive

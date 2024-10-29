@@ -4157,7 +4157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917a09039e635394b945312ec1842186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hoax: 1
+  Hoax: 0
   ErrorPaper: {fileID: 1055214648}
   Lifestyle: 0
   ResearchCode: 462
