@@ -102,6 +102,12 @@ public class PaperManager : MonoBehaviour
         InspectorSystem.Instance.ResearchButton.SetActive(false);
         StartCoroutine(DeletingResearchPaper());
 
+        Story_DecisionPaper decisionScript = currentPaperProps.GetComponent<Story_DecisionPaper>();
+        if (decisionScript != null)
+        {
+            decisionScript.RecordDecision(hoax);
+        }
+
         if (currentPaperProps.Hoax != hoax)
         {
             

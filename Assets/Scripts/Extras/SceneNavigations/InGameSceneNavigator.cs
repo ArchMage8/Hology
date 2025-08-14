@@ -48,6 +48,7 @@ public class InGameSceneNavigator : MonoBehaviour
     
     public void FinishLevel()
     {
+        LevelManager.Instance.AdvanceLevel();
         StartCoroutine(PrintFinish());
     }
 

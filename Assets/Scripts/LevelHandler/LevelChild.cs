@@ -4,7 +4,14 @@ using UnityEngine.UI;
 public class LevelChild : MonoBehaviour
 {
     public int levelIndex; // Unique to this button's level
-    public Button button;
+    public Collider2D detect_collider;
+
+    [Space(10)]
+    [Header("Locked Visuals")]
+
+    public GameObject StrikeVisual;
+    public GameObject CrossVisual;
+
 
     private void Start()
     {
@@ -15,26 +22,44 @@ public class LevelChild : MonoBehaviour
     {
         if (LevelManager.Instance != null)
         {
-           if(levelIndex == LevelManager.Instance.currentLevelIndex)
+           if(levelIndex < LevelManager.Instance.currentLevelIndex)
            {
-              UnlockButton();
+                Completed();
            }
 
-           else
+           else if(levelIndex == LevelManager.Instance.currentLevelIndex)
            {
-                LockButton();
+                Unlock();
+           }
+
+           else if(levelIndex > LevelManager.Instance.currentLevelIndex)
+           {
+                Lock();
            }
              
         }
     }
 
-    private void LockButton()
+    public void Unlock()
     {
-
+        detect_collider.enabled = true;
+        StrikeVisual.SetActive(false);
+        CrossVisual.SetActive(false);
     }
 
-    private void UnlockButton()
+    public void Completed()
     {
-
+        detect_collider.enabled = false;
+        StrikeVisual.SetActive(false);
+        CrossVisual.SetActive(true);
     }
+
+    public void Lock()
+    {
+        detect_collider.enabled = false;
+        StrikeVisual.SetActive(true);
+        CrossVisual.SetActive(false);
+    }
+
+   
 }
