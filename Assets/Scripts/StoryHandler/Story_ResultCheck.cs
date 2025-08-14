@@ -17,11 +17,19 @@ public class Story_ResultCheck : MonoBehaviour
 
         if (result)
         {
-            if (Paper_ResponseA != null) Paper_ResponseA.SetActive(true);
+            if (Paper_ResponseA != null)
+            {
+                Paper_ResponseA.SetActive(true);
+                Paper_ResponseB.SetActive(false);
+            }
         }
         else
         {
-            if (Paper_ResponseB != null) Paper_ResponseB.SetActive(true);
+            if (Paper_ResponseB != null)
+            {
+                Paper_ResponseA.SetActive(false);
+                Paper_ResponseB.SetActive(true);
+            }
         }
     }
 

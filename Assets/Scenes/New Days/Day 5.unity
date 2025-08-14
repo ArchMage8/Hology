@@ -1962,7 +1962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2367579705231906008, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2367579705231906009, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
       propertyPath: m_RootOrder
@@ -2015,6 +2015,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2367579705231906009, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
   m_PrefabInstance: {fileID: 558986733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &558986735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2367579705231906008, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
+  m_PrefabInstance: {fileID: 558986733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &558986736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558986735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85b776a89132a443b0d01d2929b7b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storylineID: 1
+  decisionIndex: 0
 --- !u!1 &565783911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5418740214193490575, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}

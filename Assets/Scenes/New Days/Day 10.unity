@@ -421,6 +421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3950456569057096868, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3950456569057096869, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1955,13 +1959,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576549723}
+  - component: {fileID: 576549724}
   m_Layer: 0
   m_Name: Whistleblower News
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &576549723
 Transform:
   m_ObjectHideFlags: 0
@@ -1979,6 +1984,21 @@ Transform:
   m_Father: {fileID: 2026350283}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &576549724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576549722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad666729f2dcd842bae9040d6c11dac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storylineIndex: 4
+  Paper_ResponseA: {fileID: 1039443646}
+  Paper_ResponseB: {fileID: 1768063606}
 --- !u!1 &621359172 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5418740214133725100, guid: 42db2a0a0e1550d4d8d55f8cd18a2a93, type: 3}
@@ -2886,6 +2906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2367579705231906008, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2367579705231906009, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3291,6 +3315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7675708403241090281, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7675708404042489644, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3300,6 +3328,11 @@ PrefabInstance:
 --- !u!4 &1039443645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7675708403241090280, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
+  m_PrefabInstance: {fileID: 1039443644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1039443646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7675708403241090281, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
   m_PrefabInstance: {fileID: 1039443644}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1042030287
@@ -9306,6 +9339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2367579705231906008, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2367579705231906009, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -9665,6 +9702,10 @@ PrefabInstance:
     - target: {fileID: 3950456569057096868, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
       propertyPath: m_Name
       value: Newspaper (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950456569057096868, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3950456569057096869, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
       propertyPath: m_RootOrder
@@ -10907,6 +10948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7675708403241090281, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7675708404042489644, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -10916,6 +10961,11 @@ PrefabInstance:
 --- !u!4 &1768063605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7675708403241090280, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
+  m_PrefabInstance: {fileID: 1768063604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1768063606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7675708403241090281, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
   m_PrefabInstance: {fileID: 1768063604}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1817206954

@@ -2785,6 +2785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Newspaper 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2367579705231906008, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2367579705231906009, guid: 8341e0974c0df894e99ce9f5416432ce, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -9015,7 +9019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950456569057096868, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3950456569057096869, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
       propertyPath: m_RootOrder
@@ -9068,6 +9072,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3950456569057096869, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
   m_PrefabInstance: {fileID: 1201559628}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1201559630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3950456569057096868, guid: 08d1bf6e527f90946ba373822a907879, type: 3}
+  m_PrefabInstance: {fileID: 1201559628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1201559631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201559630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85b776a89132a443b0d01d2929b7b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storylineID: 0
+  decisionIndex: 0
 --- !u!1001 &1212869666
 PrefabInstance:
   m_ObjectHideFlags: 0
