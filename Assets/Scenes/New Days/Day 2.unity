@@ -1184,7 +1184,7 @@ Transform:
   - {fileID: 396559924}
   - {fileID: 236927336}
   m_Father: {fileID: 2026350283}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &401960285
 Animator:
@@ -2762,7 +2762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7675708403241090281, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7675708403241090295, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
       propertyPath: ErrorPaper
@@ -3557,7 +3557,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2026350283}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1166847337
 Animator:
@@ -9384,7 +9384,7 @@ Transform:
   - {fileID: 414682646}
   - {fileID: 1886561751}
   m_Father: {fileID: 2026350283}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1355637841
 Animator:
@@ -11281,10 +11281,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2146351599}
   - {fileID: 401960284}
   - {fileID: 1355637840}
   - {fileID: 1166847336}
+  - {fileID: 2146351599}
   - {fileID: 7675708404723600309}
   - {fileID: 3494953858291508142}
   - {fileID: 1357016589}
@@ -12200,7 +12200,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7675708403241090280, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7675708403241090280, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
       propertyPath: m_LocalPosition.x
