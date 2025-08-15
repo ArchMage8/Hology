@@ -12210,6 +12210,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c2f2c7ef4a630b9488bfe84edb4ef5bf, type: 3}
+    - target: {fileID: 7675708404042489645, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7675708404089299812, guid: 8f33091340854074db9c94d0ce1a1094, type: 3}
       propertyPath: Target_Page
       value: 
